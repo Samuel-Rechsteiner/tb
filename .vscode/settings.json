@@ -3,4 +3,5 @@
     "latex-workshop.latex.outDir": "./build",
     "files.eol": "\n",
     "latex-workshop.view.pdf.viewer": "browser",
+    "compile-hero.disable-compile-files-on-did-save-code": false,
 }
