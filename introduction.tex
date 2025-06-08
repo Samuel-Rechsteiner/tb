@@ -1,32 +1,48 @@
 L'introduction est une section requise dans un rapport technique. Introduisez votre travail, l'idée de départ et les objectifs attendus. Un lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
 
 Le but de ce projet de bachelor consiste, premièrement, d'apporter plus de sécurité au système de pinces optiques par laser afin de faciliter son utilisation au quotidien. Deuxièmement, une proposition d'expérience avec un mode d'emploi compact est proposé pour le cours de NANO pour les systèmes industriels.Troisièmement, des tests de déplacements de microbilles dans différents milieux, de différentes viscosités, dans différents types de réservoirs ainsi que de multiples canaux.
-
+\newpage
 \section{Contexte}
 
-Le kit de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer de microobjets grâce à un faisceau laser focalisé. L'entreprise qui fabrique ce kit, Thorlabs, est une entreprise américaine qui conçoit des composants optiques, des lasers, des instruments de mesure. (A PEUT ETRE COMPLETER)
-
-La figure ci-dessous (voir Figure \ref{kit_vierge}) correspond au kit reçu lors du premier jour de TB. Le kit a été monté par un assistant du laboratoire COMATEC-LANS.
-
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{assets/figures/figures_introduction/kit_vierge.jpeg}
-    \end{center}
-    \caption{Kit Portable Optical Tweezers de Thorlabs}
-    \label{kit_vierge}
-\end{figure}
-
-Le kit est détaillé ci-dessous en explicant les différentes parties qui le consistent. Une image vient accompagner les explications pour plus de clareté et une compréhension plus rapide des différents composants.
+Le kit de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer de microobjets grâce à un faisceau laser focalisé. L'entreprise qui fabrique ce kit, Thorlabs, est une entreprise américaine qui conçoit des composants optiques, des lasers, des instruments de mesure.
 
 L'image ci-dessous (voir Figure \ref{chemin_laser_caméra}) montre le trajet parcouru par le laser (\textcolor{red}{en rouge}), ainsi que du microscope vers la caméra (\textcolor[RGB]{0, 120, 0}{en vert}).
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=0.7\textwidth]{assets/figures/figures_introduction/chemin_laser_camera.jpeg}
+        \includegraphics[width=0.7\textwidth]{assets/figures/Introduction/chemin_laser_camera.jpeg}
     \end{center}
     \caption{Trajet du laser et du microscope}
     \label{chemin_laser_caméra}
 \end{figure}
+
+La figure ci-dessous (voir Figure \ref{kit_vierge}) correspond au kit reçu lors du premier jour de TB. Le kit a été monté par un assistant du laboratoire COMATEC-LANS.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{assets/figures/Introduction/kit_vierge.jpeg}
+    \end{center}
+    \caption{Kit Portable Optical Tweezers de Thorlabs}
+    \label{kit_vierge}
+\end{figure}
+
+Une représentation 3D du kit, accompagnée de légendes pour chaque composant, a été réalisé par mes soins. Ce modèle CAO permet une clareté et une compréhension plus rapide des différents éléments. Les différentes modélisations 3D des composants ont directement été pris du site Thorlab. Je me suis chargé de les rassembler dans un seul fichier CAO et de faire l'assemblage (voir Figure \ref{kit_CAO_vierge_annote}).
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{assets/figures/Introduction/Kit_CAO_vierge_annote.png}
+    \end{center}
+    \caption{CAO du kit avec annotations des principaux composants}
+    \label{kit_CAO_vierge_annote}
+\end{figure}
+
+\begin{enumerate}
+    \item Laser d'une longueur d'onde 658 nm et de puissance maximum 40 mW.
+    \item Les servomoteurs permettent de déplacer la platine en X Y.
+    \item La LED permet un réglage manuel de l'éclairage.
+    \item Microscope équipé d'un objectif avec un grossissement de $63\times$ et une ouverture numérique de 0,8.
+    \item
+\end{enumerate}
 
 \section{Objectifs}
 
@@ -47,9 +63,9 @@ La deuxième partie porte sur la conception des protections contre le laser. Deu
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=0.7\textwidth]{assets/figures/figures_introduction/protection_debut_laser.jpeg}
+        \includegraphics[width=0.5\textwidth]{assets/figures/Introduction/protection_debut_laser.jpeg}
     \end{center}
-    \caption{Première protection contre le laser situé au début}
+    \caption{Première protection contre le laser située vers le laser}
     \label{protection_laser_début}
 \end{figure}
 
@@ -57,19 +73,15 @@ Une deuxième protection va être faite vers le microscope, car également à ce
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=0.7\textwidth]{assets/figures/figures_introduction/protection_fin_laser.jpeg}
+        \includegraphics[width=0.5\textwidth]{assets/figures/Introduction/protection_fin_laser.jpeg}
     \end{center}
-    \caption{Deuxième protection contre le laser situé vers le microscope}
+    \caption{Deuxième protection contre le laser située vers le microscope}
     \label{protection_laser_fin}
 \end{figure}
 
 \subsection{Notice de laboratoire}
 
-Un des objectifs de ce TB, consite également à créer une notice de laboratoire pour un cours d'étudiants, dans la filière : système industriels. Cette notice devra être simple à comprendre, compacte et comprendra une ou plusieurs manipulations
-
-
-
-
+Un des objectifs de ce TB, consite également à créer une notice de laboratoire pour un cours d'étudiants de la filière système industriels. Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides, ainsi que des mesures pratiques.
 
 %%if
 \section{Citations et bibliographie}
