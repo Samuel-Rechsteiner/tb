@@ -215,12 +215,20 @@
 \RequirePackage{ifthen}
 \RequirePackage{expkv-cs}
 \RequirePackage[outputdir=build,chapter]{minted}
+% biblatex de base par heig !
+% \RequirePackage[
+%   backref=true,
+%   backend=biber,
+%   style=alphabetic,
+%   sorting=ynt
+%   ]{biblatex}
 
+% Pour une numérotation des citations
 \RequirePackage[
   backref=true,
   backend=biber,
-  style=alphabetic,
-  sorting=ynt
+  style=numeric,
+  sorting=none
   ]{biblatex}
 
 \RequirePackage[
