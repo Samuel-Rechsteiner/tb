@@ -126,7 +126,7 @@ La clé de maintenance, comme indiqué sur le schéma électrique de la Figure~\
     \begin{center}
         \includegraphics[width=0.7\textwidth]{assets/figures/Protections_laser/Securite_electrique/boitier_arret_urgence_maintenance.png}
     \end{center}
-    \caption{Boitier comprenant l'arrêt d'urgence et la clé de maintenance}
+    \caption{Boîtier comprenant l'arrêt d'urgence et la clé de maintenance}
     \label{boitier_arret_urgence_maintenance}
 \end{figure}
 
@@ -140,3 +140,40 @@ Une fois les capteurs choisis, le schéma électrique a pu être remis à jour. 
     \caption{Version finale du schéma électrique complet de l'interlock}
     \label{schema_interlock_v2}
 \end{figure}
+
+\section{Câblage de l'interlock}
+\begin{minipage}[c]{0.48\textwidth}
+    Une fois tous les composants en place, le câblage de l'interlock a pu être fait. Sur la photo ci-contre, voir la Figure~\ref{cablage_vers_connecteur_laser}, le fil rouge et le fil noir sortent du connecteur du laser et vont être utiliser pour le circuit de l'interlock.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{assets/figures/Protections_laser/Securite_electrique/cablage_vers_connecteur_laser.jpeg}
+    \end{center}
+    \captionof{figure}{Connexion des deux fils, roug et noir, sortant du connecteur du laser}
+    \label{cablage_vers_connecteur_laser}
+\end{minipage}
+
+\begin{minipage}[c]{0.48\textwidth}
+    Ces fils vont passer sous la plaque de montage en aluminium et rejoindre le boitier contenant l'arrêt d'urgence et la clé de maintenance, comme montré sur la Figure~\ref{cablage_sous_plaque_de_montage} ci-dessous, indiqué par la flèche \textcolor[RGB]{115, 210, 210}{bleue}.
+
+    \vspace{1em}
+    La flèche \textcolor{red}{rouge}, sont les deux fils reliant le contact normalement ouvert dans le fin de course. Eux aussi, vont rejoindre le boîtier par dessous.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_electrique/cablage_sous_plaque_de_montage.jpeg}
+    \end{center}
+    \captionof{figure}{Passage des deux fils de l'interlock sous la plaque de montage en aluminium}
+    \label{cablage_sous_plaque_de_montage}
+\end{minipage}
+
+\begin{minipage}[c]{0.48\textwidth}
+    Finalement, en suivant le schéma électrique (Figure~\ref{schema_interlock_v2}), tous les composants de sécurité se retrouve dans le boîtier, afin d'être connecté ensemble, comme illustré sur la Figure~\ref{cablage_dans_boitier} ci-contre.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_electrique/cablage_dans_boitier.jpeg}
+    \end{center}
+    \captionof{figure}{Câblage des composants de sécurité dans le boîtier}
+    \label{cablage_dans_boitier}
+\end{minipage}
