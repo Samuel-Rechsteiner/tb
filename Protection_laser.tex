@@ -1,0 +1,217 @@
+\section{Protection à l'entrée du laser}
+Cette section va expliquer les différentes étapes de la conception de la protection, la modélisation de celle-ci, les prototypes qui ont été réalisés, la fabrication final ainsi que le montage.
+\subsection{Prototype initial en carton}
+Lorsqu'il est possible de faire un prototype en carton, je le fais afin d'avoir une première idée concrète du projet à réaliser. Ses avantages résident dans le fait que c'est rapide à créer et simple. La première idée a direct été une boîte qui entoure la cage de lentille avec un système de capot qui peut se soulever. Ci-dessous, deux photos du prototype en carton, avec une photo où le capot est fermée, voir Figure \ref{carton_protection_fermee}, et l'autre photo quand la protection est ouverte, voir Figure \ref{carton_protection_ouverte}.
+
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/carton_protection_ferme.jpeg}
+    \end{center}
+    \captionof{figure}{Prototype en carton, protection fermée}
+    \label{carton_protection_fermee}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/carton_protection_ouvert.jpeg}
+    \end{center}
+    \captionof{figure}{Prototype en carton, protection ouverte}
+    \label{carton_protection_ouverte}
+\end{minipage}
+
+\subsection{Modélisation de la protection}
+Maintenant que l'idée principale est là, il faut passer à la modélisation de la protection. Avant cette étape, la représentation en 3D du kit complet a été faite, comme expliqué à la page~\pageref{modelisation_3D} au premier paragraphe. Le 3D du kit permet de pouvoir créer la protection en tenant compte de  toutes les contraintes liés aux autres composants, sans devoir faire des mesures sur le kit réel.
+
+Pour pouvoir mieux comprendre les choix de conception et les étapes faites pour réaliser la protection, les Figures~\ref{model_3D_ferme}~et~\ref{model_3D_ouvert}, ci-dessous, représente la modélisation complète de la protection ouverte et fermée.
+
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/model_3D_ferme.jpeg}
+    \end{center}
+    \captionof{figure}{Modèle 3D de la protection ouverte}
+    \label{model_3D_ferme}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/model_3D_ouvert.jpeg}
+    \end{center}
+    \captionof{figure}{Modèle 3D de la protection fermée}
+    \label{model_3D_ouvert}
+\end{minipage}
+
+\begin{table}[H]
+    \centering
+    \caption{Nomenclature des pièces modélisées avec code couleur}
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Couleur}                           & \textbf{Nom de la pièce}                    \\
+        \hline
+        \textcolor[RGB]{88, 122, 163}{Bleu}        & Capot inférieur avant                       \\
+        \textcolor[RGB]{170, 80, 70}{Rouge}        & Capot inférieur arrière                     \\
+        \textcolor[RGB]{233, 173, 56}{Jaune}       & Capot supérieur                             \\
+        \textcolor[RGB]{100, 100, 100}{Gris foncé} & Charnière reliant les capots inférieurs     \\
+        \textcolor[RGB]{70, 170, 70}{Vert}         & Entretoises suportant les capots inférieurs \\
+        \hline
+    \end{tabular}
+    \label{tab:nomenclature_pieces}
+\end{table}
+
+\subsubsection{Contraintes rencontrées}
+
+\begin{minipage}[c]{0.4\textwidth}
+    La première contrainte a été cet axe noir vertical que l'on voit par la flèche noir sur la Figure~\ref{contrainte_axe_vertical} qui passent à travers les deux capots inférieurs.
+
+    La solution s'est résumé à séparer le capot inférieur en deux, pour pouvoir assembler facilement sans devoir démonter des pièces du kit original.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.58\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/contrainte_axe_vertical.jpeg}
+    \end{center}
+    \captionof{figure}{Vue en perspective cavalière: Axe vertical traversant les protections inférieures}
+    \label{contrainte_axe_vertical}
+\end{minipage}
+
+\begin{minipage}[c]{0.4\textwidth}
+    Une contrainte supplémentaire a été cette vis de réglage indiquée par la flèche noir sur la Figure~\ref{contrainte_vis}. Elle se situe dans la course du capot supérieur.
+
+    La solution retenue a été de s'assurer que toutes les protections, dans le plan horizontal, ne dépassent pas la largeur de la vis. Cette contrainte en entraîne une autre, qui sera détaillée ensuite.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.58\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/contrainte_vis.jpeg}
+    \end{center}
+    \captionof{figure}{Vue de face: Vis de réglage dans la course du capot supérieur}
+    \label{contrainte_vis}
+\end{minipage}
+
+\begin{minipage}[c]{0.5\textwidth}
+    La contrainte qui découle de la vis de réglage, et vu l'obligation de réduire la taille des protections, cela a créer un vide pouvant laisser passer les rayons du laser. Les traits manuscrits en rouge sur la Figure~\ref{contrainte_passage_laser_cage} représentent les fuites potentielles du laser. Ce phénomène apparaît également à droite des protections.
+
+    La solution apportée a été d'ajouter un joint en mousse souple entourant les quatres axes qui formant la cage. Les protections viendraient s'appuyer sur les joints et combleraient les vides. Les détails en photo pour cette solution sont montrés à la section~\ref{prototype_bois}.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.48\textwidth}
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/contrainte_passage_laser_cage.jpeg}
+    \end{center}
+    \captionof{figure}{Vue en perspective cavalière: Fuites potentielles des rayons du laser pour les capots inférieurs}
+    \label{contrainte_passage_laser_cage}
+\end{minipage}
+
+\begin{minipage}[c]{0.6\textwidth}
+    La contrainte expliquée ici, similaire à la précédente, vient contrer les fuites possibles du laser. Cependant, cette fois, c'est pour la protection supérieure. En effet, lorsque le capot est fermé, il y'a un risque qu'il y ait des espaces fins où la lumière du faisceau peut s'échapper.
+
+    La solution va également être la pose d'un joint, cette fois à l'intérieur du capot supérieur sur tout son contour. Ainsi, lorsque la protection est fermée, le joint va combler les vides. La modélisation ci-contre, voir la Figure~\ref{contrainte_passage_laser_capot}, montre qu'un espace entre la partie inférieure est supérieur de la protection a volontairement été créer afin de laisser de la place pour le joint.
+
+    La solution apportée a été d'ajouter un joint en mousse souple entourant les quatres axes qui formant la cage. Les protections viendraient s'appuyer sur les joints et combleraient les vides. Les détails en photo pour cette solution sont montrés à la section~\ref{prototype_bois}.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.38\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/contrainte_passage_laser_capot.jpeg}
+    \end{center}
+    \captionof{figure}{Vue de droite: Fuites potentielles des rayons du laser pour le capot supérieur}
+    \label{contrainte_passage_laser_capot}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+    La dernière contrainte est: comment fixer les protections au kit ? Vu que la platine, où sont fixés tous les composants du kit, contient des taraudages M6 sur toute sa surface, il est facile de trouver des encrages de fixation.
+
+    La solution trouvée, illustrée ci-dessous sur la Figure~\ref{contrainte_entretoises}, est d'utiliser des entretoises. Deux pour fixer le capot inférieur avant, et trois pour le capot inférieur arrière. Ce dernier en contient plus, car subit plus de contraintes mécaniques. L'addition de la masse du capot inférieur arrière, de la charnière et du capot supérieur engendre un poid conséquent. Bien évidemment, il a fallu faire attention aux composants déjà positionnés et choisir judicieusement les emplacements des entretoises.
+
+    Une entretoise hexagonale mesure 50~mm de hauteur, 8~mm de largeur et un taraudage M6 à chaque extrémité.
+
+    Pour avoir une marge de sécurité, des oblongs ont été réalisés sur les tôles afin de faciliter leur fixation.
+    \vspace{1em}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/contrainte_entretoises.jpeg}
+    \end{center}
+    \captionof{figure}{Vue de dessus: cinq entretoises pour fixer les capots au kit}
+    \label{contrainte_entretoises}
+\end{minipage}
+
+\subsection{Mise en plan des pièces modélisées}
+La modélisation terminée, il faut passer à la réalisation des dessins techniques pour la production des pièces. Une discussion préalable avec le responsable M. Ottonin, de l'atelier mécanique sur le site de Cheseaux, a eu lieu afin de parler du projet. Au cours de cet entretien, le matériau ainsi que l'épaisseur des différentes pièces a été choisi. Pour un usinage facile, le choix s'est porté sur l'aluminium avec une épaisseur de 1.5~mm. Les trois mises en plan se retrouvent au chapitre des annexes \ref{chapter:annexes}, sur les Figures~\ref{mise_en_plan_capot_avant},~\ref{mise_en_plan_capot_arriere}~e~\ref{mise_en_plan_capot_superieur}.
+
+\begin{minipage}{\textwidth}
+    \subsection{Réalisation d'un prototype en bois} \label{prototype_bois}
+    Une fois les mises en plan faites, j'ai réalisé les trois pièces en MDF d'épaisseur 3~mm acheté chez Jumbo \cite{mdfJumbo}, afin d'être sûr des dimensions des pièces. Pour me faciliter la tâche, j'ai imprimer les dessins techniques à l'échelle~\texttt{1:1}, puis je les ai collés sur les panneaux en bois. Il ne restait plus qu'à découper les pièces au cutter. La Figure~\ref{decoupe_bois} illustre ces propos.
+    \vspace{1em}
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/decoupe_bois.jpeg}
+    \end{center}
+    \captionof{figure}{Découpe des protections en bois à l'aide des plans imprimés}
+    \label{decoupe_bois}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+    Pour tenir les différents pliages, des carelets en bois ont été fixés, montrés par les flèches noires sur la Figure~\ref{montage_bois}.
+
+    La fèche \textcolor{red}{rouge} montre le joint qui empêche les rayons du laser de passer outre la protection. Le joint a une épaisseur de 3~mm au repos.
+    \vspace{1em}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/montage_bois.jpeg}
+    \end{center}
+    \captionof{figure}{Montage de la protection à l'entrée du laser en bois MDF de 3~mm}
+    \label{montage_bois}
+\end{minipage}
+\subsection{Fabrication des pièces en aluminium}
+\begin{minipage}{\textwidth}
+
+    \begin{minipage}[c]{0.6\textwidth}
+        La Figure~\ref{capots_brutes} ci-contre, montre les trois pièces usinées par l'atelier mécanique, telles que reçues. Une peinture noire mat vient recouvrir les pièces pour absorber les rayons du laser.
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.35\textwidth}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/capots_brutes.jpg}
+            \caption{Les trois protections fabriquées en aluminium 1.5~mm d'épaisseur}
+            \label{capots_brutes}
+        \end{figure}
+    \end{minipage}
+\end{minipage}
+
+
+\begin{minipage}{\textwidth}
+    \subsection{Montage final}
+    Les figures~\ref{montage_alu_ouvert}~et~\ref{montage_alu_ferme} ci-dessous, montre le montage final des trois capots sur le kit.
+    \vspace{1em}
+
+    \begin{minipage}[c]{0.48\textwidth}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[height=6cm]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/montage_alu_ouvert.jpeg}
+            \end{center}
+            \captionof{figure}{Montage de la protection en aluminium ouvert}
+            \label{montage_alu_ouvert}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}[c]{0.48\textwidth}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[height=6cm]{assets/figures/Protections_laser/Securite_mecanique/Protection_entree_laser/montage_alu_ferme.jpeg}
+            \end{center}
+            \captionof{figure}{Montage de la protection en aluminium fermé}
+            \label{montage_alu_ferme}
+        \end{figure}
+    \end{minipage}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+    Le tableau~\ref{tab:visserie_protection} récapitule toute la visserie nécessaires pour le montage des protections sur le kit.
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|l|c|l|}
+            \hline
+            \textbf{Élément} & \textbf{Quantité} & \textbf{Utilisation}                   \\
+            \hline
+            Vis CHC M6x20    & 5                 & Fixation des entretoises à la platine  \\
+            Vis CHC M6x8     & 5                 & Fixation des tôles sur les entretoises \\
+            Rondelles M6     & 5                 & Avec les vis M6x8                      \\
+            Vis CHC M6x16    & 4                 & Fixation de la charnière aux tôles     \\
+            Écrous M6        & 4                 & Pour les vis de la charnière           \\
+            \hline
+        \end{tabular}
+        \caption{Visserie nécessaire au montage de la protection}
+        \label{tab:visserie_protection}
+    \end{table}
+\end{minipage}
+\subsection{Points d'améliorations}
