@@ -38,9 +38,21 @@ Pour pouvoir mieux comprendre les choix de conception et les étapes faites pour
     \label{model_3D_ouvert}
 \end{minipage}
 
+
+% Prompt ChatGPT pour la création du tableau:
+% Explication des pièces modélisées représentées en couleur pour la protection à l'entrée du laser
+% \begin{itemize}
+%     \item \textcolor[RGB]{88, 122, 163}{En bleu}, le capot inférieur avant.
+%     \item \textcolor[RGB]{170, 80, 70}{En rouge}, le capot inférieur arrière.
+%     \item \textcolor[RGB]{233, 173, 56}{En jaune}, le capot supérieur.
+%     \item \textcolor[RGB]{100, 100, 100}{En gris foncé}, la charnière qui relie le capot inférieur arrière et le capot supérieur.
+%     \item \textcolor[RGB]{70, 170, 70}{En vert}, les entretoises qui supportent les capots inférieurs avant et arrière.
+% \end{itemize}
+% fais en plutot un tableau en latex
+
 \begin{table}[H]
     \centering
-    \caption{Nomenclature des pièces modélisées avec code couleur pour la protection à l'entrée du laser}
+    \caption{Nomenclature des pièces modélisées avec code couleur pour la protection à l'entrée du laser. \cite{chatgptTableProtectionEntreeLaser}}
     \begin{tabular}{|c|l|}
         \hline
         \textbf{Couleur}                           & \textbf{Nom de la pièce}                    \\
@@ -196,6 +208,16 @@ La modélisation terminée, il faut passer à la réalisation des dessins techni
 
 \begin{minipage}{\textwidth}
     Le tableau~\ref{tab:visserie_protection} récapitule toute la visserie nécessaires pour le montage des protections sur le kit.
+
+    % Prompt ChatGPT pour la création du tableau:
+    % Fais moi un tableau récapitulatif de toute la visserie nécessaires:
+
+    % - 5 vis imbus M6x20 pour fixer les entretoises à la platine.
+    % - 5 vis imbus M6x8 pour fixer les tôles sur les entretoises.
+    % - 5 rondelles M6.
+    % - 4 vis imbus M6x16 pour fixer la charnière aux tôles.
+    % - 4 écrous M6 pour la charnière
+
     \begin{table}[H]
         \centering
         \renewcommand{\arraystretch}{1.3}
