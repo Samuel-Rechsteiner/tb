@@ -38,9 +38,19 @@ La solution retenu pour avoir le moins de contraintes possible dans les mouvemen
     \label{model_3D_microscope}
 \end{minipage}
 
+% Prompt ChatGPT pour la création du tableau:
+% Fais moi un tableau avec les éléments ci-dessous:
+
+% Partie inférieure:
+% - En vert, support pour fixer le tissu inférieur à la LED
+% - En bleu foncé, support pour fixer le tissu inférieur à la platine
+% Partie supérieure:
+% - En rouge, support qui vient se clipser sur la platine
+% - En brun, boitier pour fixer le fin de course
+% - En jaune, cadre pour fixer le tissu supérieur au support rouge
+
 \begin{table}[H]
     \centering
-    \caption{Nomenclature des pièces modélisées avec code couleur pour la protection vers le microscope}
     \begin{tabular}{|c|l|}
         \hline
         \textbf{Couleur}                         & \textbf{Nom de la pièce}                             \\
@@ -57,6 +67,7 @@ La solution retenu pour avoir le moins de contraintes possible dans les mouvemen
         \textcolor[RGB]{233, 173, 56}{Jaune}     & Cadre pour fixer le tissu supérieur au support rouge \\
         \hline
     \end{tabular}
+    \caption{Nomenclature des pièces modélisées avec code couleur pour la protection vers le microscope. \cite{chatgptTableProtectionVersMicroscope}}
     \label{tab:nomenclature_pieces_microscope}
 \end{table}
 
@@ -120,3 +131,5 @@ La solution retenu pour avoir le moins de contraintes possible dans les mouvemen
     \captionof{figure}{Boîtier pour le fin de course}
     \label{boitier_fin_de_course}
 \end{minipage}
+
+\subsection{Points d'améliorations}

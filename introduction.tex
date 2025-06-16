@@ -1,14 +1,14 @@
-Le but de ce projet de bachelor consiste, premièrement, d'apporter plus de sécurité au système de pinces optiques par laser afin de faciliter son utilisation au quotidien. En effet, un laser d'une puissance maximale de 40~mW est utilisé dans ce kit est peu engendrer de graves problèmes oculaires.
+Le but de ce projet de bachelor consiste, premièrement, à apporter plus de sécurité au système de pinces optiques par laser afin de faciliter son utilisation au quotidien. En effet, un laser d'une puissance maximale de 40~mW est utilisé dans ce kit et peut engendrer de graves problèmes oculaires.
 
-Deuxièmement, une proposition d'expérience avec un mode d'emploi compact est proposé pour le cours de NANO, un cours à choix de 3~ème année.
+Deuxièmement, une proposition d'expérience avec un mode d'emploi compact est proposé pour le cours de NANO, un cours à choix de 3\ieme{} année. La documentation actuellement fournie par le fabricant est volumineuse et peut adaptée pour une utilisation en laboratoire par des étudiants.
 
-Pour finir, une application codé en python avec du traitement d'image est développée pour pouvoir, par exemple, détecter automatiquement des particules à attraper avec le laser et de déplacer automatiquement celles-ci.
+Pour finir, une application codée en python avec du traitement d'image est développée. Elle permets de pouvoir, par exemple, détecter automatiquement des particules, les attraper avec le laser pour ensuite les déplacer à un autre endroit. Cette démarche est pûrement pédagogique et permet de mettre en pratique les outils acquis tout le long du cursus de bachelor.
 
-Ce projet vis donc à rendre l'expérience plus sûre, plus accessible pour tout utilisateur, et permet une automatisation partielle du processus de manipulation optique des particules.
+Ce projet vise donc à rendre l'expérience plus sûre, plus accessible pour tout utilisateur et permet une automatisation partielle du processus de manipulation optique des particules.
 \newpage
 \section{Contexte}
 
-Le kit de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer de microobjets grâce à un faisceau laser focalisé. L'entreprise américaine qui a fabriqué ce kit est Thorlabs. La citation suivante a été traduite de l'anglais: "Thorlabs conçoit et fabrique des produits dans les domaines de la fibre optique, des lasers, de l'instrumentation optique, de l'optomécanique, de la photonique et de l'isolation contre les vibrations"\cite{thorlabsWikipedia}.
+Le kit de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer des microobjets grâce à un faisceau laser focalisé. L'entreprise américaine qui a fabriqué ce kit est Thorlabs. La citation suivante a été traduite de l'anglais: "Thorlabs conçoit et fabrique des produits dans les domaines de la fibre optique, des lasers, de l'instrumentation optique, de l'optomécanique, de la photonique et de l'isolation contre les vibrations"\cite{thorlabsWikipedia}.
 
 L'image ci-dessous (voir Figure~\ref{chemin_laser_caméra}) montre le trajet parcouru par le laser (\textcolor{red}{en rouge}), ainsi que du microscope vers la caméra (\textcolor[RGB]{0, 120, 0}{en vert}).
 \begin{figure}[H]
@@ -30,7 +30,7 @@ La figure ci-dessous (voir Figure~\ref{kit_vierge}) correspond au kit reçu lors
 \end{figure}
 
 \newpage
-Une représentation 3D du kit, accompagnée de légendes pour chaque composant, a été réalisé par mes soins.\label{modelisation_3D} Ce modèle CAO permet une clareté et une compréhension plus rapide des différents éléments. Les différentes modélisations 3D des composants ont directement été pris du site Thorlabs \cite{portableOpticalTweezers}, dans l'onglet \guillemotleft Component List\guillemetright. Je me suis chargé de les rassembler dans un seul fichier CAO et de faire l'assemblage (voir Figure~\ref{kit_CAO_vierge_annote}).
+Une représentation 3D du kit, accompagnée de légendes pour chaque composant, a été réalisé par mes soins.\label{modelisation_3D} Ce modèle CAO permet une clareté et une compréhension plus rapide des différents éléments. Les différentes modélisations 3D des composants ont directement été pris du site Thorlabs \cite{portableOpticalTweezers}, dans l'onglet \guillemotleft Component List\guillemetright. Je me suis chargé de les intégrer dans un seul fichier CAO et d'en effectuer l'assemblage (voir Figure~\ref{kit_CAO_vierge_annote}).
 
 \begin{figure}[H]
     \begin{center}
@@ -43,11 +43,11 @@ Une représentation 3D du kit, accompagnée de légendes pour chaque composant, 
 \begin{enumerate}
     \item Laser d'une longueur d'onde 658 nm (couleur rouge visible) avec une puissance maximale de 40 mW.
     \item Les servomoteurs permettent de déplacer la platine en X Y.
-    \item La LED permet un réglage manuel de lvéclairage.
+    \item La LED permet un réglage manuel de l'éclairage.
     \item Microscope équipé d'un objectif avec un grossissement de $63\times$ et une ouverture numérique de 0,8.
     \item Caméra couleur de 1,6 mégapixel.
-    \item Lentilles réglables pour modifier la hauteur de la mise au point du laser.
-    \item Ce driver permet de piloter le laser, soit directement avec les boutons intégrés, soit via l'application Kinesis pour une meilleure ergonomie.
+    \item Lentilles réglables afin de modifier la hauteur de la mise au point du laser.
+    \item Ce driver permet de piloter le laser, soit directement avec les boutons intégrés, soit via l'application Kinesis \cite{kinesisSoftware} pour une meilleure ergonomie.
     \item Ces drivers permettent le pilotage des servomoteurs, soit directement avec les boutons intégrés, soit via l'application Kinesis pour une meilleure ergonomie.
     \item Ce driver permet de faire varier l'intensité lumineuse de la LED.
     \item La platine permet d'accueillir l'échantillon que l'on veut analyser.
@@ -68,15 +68,15 @@ Les différents objectifs de ce travail de bachelor sont listés ci-dessous :
 
 \subsection{Mise en service du kit}
 
-La première partie consiste à mettre en service le kit. Il faut alimenter les différents drivers qui contrôlent les moteurs, la LED ainsi que le driver pour le laser. Viens ensuite la procédure de calibration du laser, ainsi que l'installation des logiciels permettant de contrôler, d'une part les drivers des moteurs, et d'autre part le driver du laser.
+La première partie consiste à mettre en service le kit. Il faut alimenter les différents drivers qui contrôlent les moteurs, la LED ainsi que le driver lié au laser. Viens ensuite la procédure de calibration du laser, ainsi que l'installation des logiciels permettant de contrôler; d'une part les drivers des moteurs, et d'autre part le driver du laser.
 \subsection{Protections contre le laser}
-La deuxième partie porte sur la conception des protections contre le laser. Deux parties du kit ont besoin d'avoir une protection totale afin d'éviter toutes reflexions nocives du laser dans les yeux de l'utilisateur. La première protection à réaliser est située au début du laser et va devoir entouré toute la cage oû le laser passe (voir Figure~\ref{protection_laser_début}). L'encadré en \textcolor{red}{rouge} représente l'endroit où la protection va devoir être imaginée.
+La deuxième partie porte sur la conception des protections contre le laser. Deux parties du kit ont besoin d'avoir une protection totale afin d'éviter toutes reflexions nocives du laser dans les yeux de l'utilisateur. La première protection à réaliser est située au début du laser et va devoir entourer toute la cage où le laser passe (voir Figure~\ref{protection_laser_début}). L'encadré en \textcolor{red}{rouge} représente l'endroit où la protection va devoir être imaginée.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=0.5\textwidth]{assets/figures/Introduction/protection_debut_laser.png}
     \end{center}
-    \caption{Première protection contre le laser située vers le laser}
+    \caption{Première protection située vers le laser}
     \label{protection_laser_début}
 \end{figure}
 
@@ -92,7 +92,11 @@ Une deuxième protection va être faite vers le microscope, car également à ce
 
 \subsection{Notice de laboratoire}
 
-Un des objectifs de ce TB, consite également à créer une notice de laboratoire pour un cours à choix de 3~ème année, intitulé NANO. Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides, ainsi que des mesures pratiques.
+Un des objectifs de ce TB, consite également à créer une notice de laboratoire pour un cours à choix de 3\ieme{} année, intitulé NANO. Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides, ainsi que des mesures pratiques. Des notices du fabricant sont accompagnées avec le kit, mais sont très volumineuse, car elles doivent expliquer tout le kit en détail. Ici, le but est de faire une expérience centrée uniquement sur les éléments nécessaires à la manipulation.
+x
+\subsection{Application python}
+
+Cette application permettrait d'intéragir avec les deux logiciels Thorcam et Kinesis. Thorcam sert à afficher l'image en direct de la caméra, et Kinesis permet de contrôler les moteurs de translation ainsi que la puissance du laser. Le but est de rassembler ces deux outils dans un seul programme, et d'y ajouter du traitement d'image. Par exemple, on pourrait détecter automatiquement des particules dans l'image, puis les attraper et les déplacer avec le faisceau laser en contrôlant les moteurs via Kinesis.
 
 %%if
 % \section{Citations et bibliographie}
