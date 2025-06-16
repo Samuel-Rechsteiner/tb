@@ -1,14 +1,14 @@
 Le but de ce projet de bachelor consiste, premièrement, à apporter plus de sécurité au système de pinces optiques par laser afin de faciliter son utilisation au quotidien. En effet, un laser d'une puissance maximale de 40~mW est utilisé dans ce kit et peut engendrer de graves problèmes oculaires.
 
-Deuxièmement, une proposition d'expérience avec un mode d'emploi compact est proposé pour le cours de NANO, un cours à choix de 3\ieme{} année. La documentation actuellement fournie par le fabricant est volumineuse et peut adaptée pour une utilisation en laboratoire par des étudiants.
+Deuxièmement, une proposition d'expérience avec un mode d'emploi compact est proposé pour le cours de NANO, un cours à choix de 3\ieme{} année. La documentation actuelle fournie par le fabricant est volumineuse et peut adaptée pour une utilisation en laboratoire pour des étudiants.
 
-Pour finir, une application codée en python avec du traitement d'image est développée. Elle permets de pouvoir, par exemple, détecter automatiquement des particules, les attraper avec le laser pour ensuite les déplacer à un autre endroit. Cette démarche est pûrement pédagogique et permet de mettre en pratique les outils acquis tout le long du cursus de bachelor.
+Pour finir, une application codée en python avec du traitement d'image est développée. Elle permets de pouvoir, par exemple, détecter automatiquement des particules, les attraper avec le laser pour ensuite les déplacer à un autre endroit. Cette démarche est purement pédagogique et permet de mettre en pratique les outils acquis tout le long du cursus de bachelor.
 
 Ce projet vise donc à rendre l'expérience plus sûre, plus accessible pour tout utilisateur et permet une automatisation partielle du processus de manipulation optique des particules.
 \newpage
 \section{Contexte}
 
-Le kit de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer des microobjets grâce à un faisceau laser focalisé. L'entreprise américaine qui a fabriqué ce kit est Thorlabs. La citation suivante a été traduite de l'anglais: "Thorlabs conçoit et fabrique des produits dans les domaines de la fibre optique, des lasers, de l'instrumentation optique, de l'optomécanique, de la photonique et de l'isolation contre les vibrations"\cite{thorlabsWikipedia}.
+Le kit de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer des microobjets grâce à un faisceau laser focalisé. L'entreprise américaine qui a fabriqué ce kit est Thorlabs. La citation suivante a été traduite de l'anglais: \guillemotleft{}~Thorlabs conçoit et fabrique des produits dans les domaines de la fibre optique, des lasers, de l'instrumentation optique, de l'optomécanique, de la photonique et de l'isolation contre les vibrations~\guillemotright{}\cite{thorlabsWikipedia}.
 
 L'image ci-dessous (voir Figure~\ref{chemin_laser_caméra}) montre le trajet parcouru par le laser (\textcolor{red}{en rouge}), ainsi que du microscope vers la caméra (\textcolor[RGB]{0, 120, 0}{en vert}).
 \begin{figure}[H]
@@ -69,34 +69,38 @@ Les différents objectifs de ce travail de bachelor sont listés ci-dessous :
 \subsection{Mise en service du kit}
 
 La première partie consiste à mettre en service le kit. Il faut alimenter les différents drivers qui contrôlent les moteurs, la LED ainsi que le driver lié au laser. Viens ensuite la procédure de calibration du laser, ainsi que l'installation des logiciels permettant de contrôler; d'une part les drivers des moteurs, et d'autre part le driver du laser.
-\subsection{Protections contre le laser}
-La deuxième partie porte sur la conception des protections contre le laser. Deux parties du kit ont besoin d'avoir une protection totale afin d'éviter toutes reflexions nocives du laser dans les yeux de l'utilisateur. La première protection à réaliser est située au début du laser et va devoir entourer toute la cage où le laser passe (voir Figure~\ref{protection_laser_début}). L'encadré en \textcolor{red}{rouge} représente l'endroit où la protection va devoir être imaginée.
 
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=0.5\textwidth]{assets/figures/Introduction/protection_debut_laser.png}
-    \end{center}
-    \caption{Première protection située vers le laser}
-    \label{protection_laser_début}
-\end{figure}
+\begin{minipage}{\textwidth}
+    \subsection{Protections contre le laser}
+    La deuxième partie porte sur la conception des protections contre le laser. Deux parties du kit ont besoin d'avoir une protection totale afin d'éviter toutes reflexions nocives du laser dans les yeux de l'utilisateur. La première protection à réaliser est située au début du laser et va devoir entourer toute la cage où le faisceau du laser passe (voir Figure~\ref{protection_laser_début}). L'encadré en \textcolor{red}{rouge} représente l'endroit où la protection va devoir être imaginée.
 
-Une deuxième protection va être faite vers le microscope, car également à cet endroit, le laser devient visible à l'oeil nu et il y'a un grand risque de se blesser. L'encadré en \textcolor{blue}{bleu} représente l'endroit où la protection va devoir être imaginée. Voir la Figure~\ref{protection_laser_fin}.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{assets/figures/Introduction/protection_debut_laser.png}
+        \end{center}
+        \captionof{figure}{Première protection située vers le laser}
+        \label{protection_laser_début}
+    \end{figure}
+\end{minipage}
 
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=0.5\textwidth]{assets/figures/Introduction/protection_fin_laser.png}
-    \end{center}
-    \caption{Deuxième protection contre le laser située vers le microscope}
-    \label{protection_laser_fin}
-\end{figure}
-
+\begin{minipage}{\textwidth}
+    Une deuxième protection va être faite vers le microscope, car également à cet endroit, le laser devient visible à l'oeil nu et il y'a un grand risque de se blesser. L'encadré en \textcolor{blue}{bleu} représente l'endroit où la protection va devoir être imaginée. Voir la Figure~\ref{protection_laser_fin}.
+    \vspace{1em}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{assets/figures/Introduction/protection_fin_laser.png}
+        \end{center}
+        \captionof{figure}{Deuxième protection contre le laser située vers le microscope}
+        \label{protection_laser_fin}
+    \end{figure}
+\end{minipage}
 \subsection{Notice de laboratoire}
 
 Un des objectifs de ce TB, consite également à créer une notice de laboratoire pour un cours à choix de 3\ieme{} année, intitulé NANO. Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides, ainsi que des mesures pratiques. Des notices du fabricant sont accompagnées avec le kit, mais sont très volumineuse, car elles doivent expliquer tout le kit en détail. Ici, le but est de faire une expérience centrée uniquement sur les éléments nécessaires à la manipulation.
-x
+
 \subsection{Application python}
 
-Cette application permettrait d'intéragir avec les deux logiciels Thorcam et Kinesis. Thorcam sert à afficher l'image en direct de la caméra, et Kinesis permet de contrôler les moteurs de translation ainsi que la puissance du laser. Le but est de rassembler ces deux outils dans un seul programme, et d'y ajouter du traitement d'image. Par exemple, on pourrait détecter automatiquement des particules dans l'image, puis les attraper et les déplacer avec le faisceau laser en contrôlant les moteurs via Kinesis.
+Cette application permettrait d'intéragir avec les deux logiciels Thorcam~\cite{thorcamSoftware} et Kinesis. Thorcam sert à afficher l'image en direct de la caméra, et Kinesis permet de contrôler les moteurs de translation ainsi que la puissance du laser. Le but est de rassembler ces deux outils dans un seul programme, et d'y ajouter du traitement d'image. Par exemple, on pourrait détecter automatiquement des particules dans l'image, puis les attraper et les déplacer avec le faisceau laser en contrôlant les moteurs via Kinesis.
 
 %%if
 % \section{Citations et bibliographie}
