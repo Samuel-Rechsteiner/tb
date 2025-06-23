@@ -196,6 +196,7 @@
 \RequirePackage{framed}
 \RequirePackage{glossaries}
 \RequirePackage{graphicx}
+\RequirePackage{subcaption}
 \RequirePackage{lastpage}
 \RequirePackage{lipsum}
 \RequirePackage{listings}

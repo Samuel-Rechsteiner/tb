@@ -41,19 +41,11 @@
 \begin{abstract}
     \input{abstract}
 \end{abstract}
-
-%% Sommaire et tables
 \clearemptydoublepage
 {
     \tableofcontents
     \let\cleardoublepage\clearpage
-    \listoffigures
-    \let\cleardoublepage\clearpage
-    \listoftables
-    \let\cleardoublepage\clearpage
-    % \listoflistings
 }
-
 \printnomenclature
 \clearemptydoublepage
 \pagenumbering{arabic}
@@ -63,11 +55,8 @@
 \chapter{Introduction}
 \input{introduction.tex}
 % \input{examples.tex}
-\chapter{Câblage du kit}
-\input{1_Cablage_du_kit.tex}
-\chapter*{Système de protection contre le laser}
-\addcontentsline{toc}{chapter}{Système de protection contre le laser}
-\input{2_Systeme_protection_laser.tex}
+\chapter{Câblage du système}
+\input{1_Cablage_du_systeme.tex}
 
 \chapter{Sécurité électrique} \label{chapter:securite_electrique}
 \input{3_Securite_electrique.tex}
@@ -77,6 +66,16 @@
 
 \chapter{Conclusion}
 \input{conclusion.tex}
+
+%% Sommaire et tables
+\clearemptydoublepage
+{
+    \listoffigures
+    \let\cleardoublepage\clearpage
+    \listoftables
+    \let\cleardoublepage\clearpage
+    % \listoflistings
+}
 
 \clearpage
 \printbibliography
