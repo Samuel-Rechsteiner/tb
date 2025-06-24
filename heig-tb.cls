@@ -196,7 +196,6 @@
 \RequirePackage{framed}
 \RequirePackage{glossaries}
 \RequirePackage{graphicx}
-\RequirePackage{subcaption}
 \RequirePackage{lastpage}
 \RequirePackage{lipsum}
 \RequirePackage{listings}
@@ -216,6 +215,9 @@
 \RequirePackage{ifthen}
 \RequirePackage{expkv-cs}
 \RequirePackage[outputdir=build,chapter]{minted}
+% Packages ajoutés:
+\RequirePackage{subcaption}
+%\RequirePackage{enumitem}
 % biblatex de base par heig !
 % \RequirePackage[
 %   backref=true,
