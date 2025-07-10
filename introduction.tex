@@ -10,6 +10,30 @@ Ce projet vise donc à rendre l'expérience plus sûre, plus accessible pour tou
 
 Le système de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer des microobjets grâce à un faisceau laser focalisé. L'entreprise américaine qui vends ce système est Thorlabs. La citation suivante est traduite de l'anglais: \guillemotleft{}~Thorlabs conçoit et fabrique des produits dans les domaines de la fibre optique, des lasers, de l'instrumentation optique, de l'optomécanique, de la photonique et de l'isolation contre les vibrations~\guillemotright{}\cite{thorlabsWikipedia}.
 
+\subsection{Théorie}
+Le principe des pinces optiques repose sur l'interaction entre un faisceau laser focalisé (profil gaussien, mode \gls{tem00}) et une petite particule diélectrique, typiquement une bille en polystyrène d'environ 1~\textmu m de diamètre. Cette interaction génère deux forces :
+\begin{itemize}[label=\textbullet]
+    \item La force de gradient (gradient force), qui agit vers les zones de plus forte intensité lumineuse, c'est-à-dire vers le foyer du faisceau.
+    \item La force de diffusion (scattering force), qui pousse la particule dans la direction de la propagation du faisceau.
+\end{itemize}
+Pour qu'une particule soit piégée de manière stable, il faut que la force du gradient soit plus grande que la force de diffusion.
+
+Des modèles simples permettent d'expliquer le fonctionnement des pinces optiques dans deux cas limites : le régime de Rayleigh ($R \ll \lambda$) et le régime de Mie ($R \gg \lambda$), selon la taille relative de la particule par rapport à la longueur d'onde du laser.
+Cependant, dans la plupart des systèmes réels, on opère dans un régime intermédiaire ($R \approx \lambda$), qui nécessite des approches théoriques plus complexes (comme la diffusion de Lorentz-Mie généralisée ou la théorie de la matrice T).
+L'étude des régimes extrêmes reste toutefois utile pour mieux comprendre les principes du piégeage optique.
+R est le rayon de la particule, et $\lambda$ est la longueur d'onde du laser~\cite{epflExplanationOpticalTweezers}
+
+Le régime de Rayleih va être expliqué dans notre cas pour comprendre ce principe physique.
+
+Dans ce régime, on peut voir la bille comme un ensemble de petits dipôles polarisables. Le champ électrique du laser induit un moment dipolaire dans chacun d'eux. Comme le champ est pratiquement uniforme sur la bille (car elle est très petite), tous les dipôles sont polarisés de la même manière. On peut donc représenter la bille comme un seul dipôle global, dont la polarisation dépend directement du champ électrique local.
+
+L'énergie potentielle de ce dipôle dans le champ est proportionnelle à l'intensité lumineuse. Par conséquent, une force apparaît, dirigée vers les zones de plus forte intensité : c'est la force de gradient, qui permet de ramener la particule vers le centre du faisceau.
+
+En parallèle, la force de diffusion provient de la diffusion de la lumière : le faisceau est en partie absorbé et réémis par la particule, ce qui la pousse dans le sens de propagation du faisceau. Cette force est également proportionnelle à l'intensité lumineuse, mais elle agit dans le sens opposé à celui du piégeage.
+
+Enfin, les expressions mathématiques des deux forces montrent qu'elles dépendent toutes deux des caractéristiques du faisceau laser, du milieu (par exemple de l'eau), et de l'indice de réfraction de la particule (polystyrène dans notre cas). La stabilité du piège dépend donc fortement du contraste entre ces indices et de la géométrie du faisceau.
+
+\subsection{Pratique du TB}
 La Figure~\ref{chemin_laser_caméra} montre le trajet parcouru par le laser (\textcolor{red}{en rouge}), ainsi que du microscope vers la caméra (\textcolor[RGB]{0, 120, 0}{en vert}).
 \begin{figure}[H]
     \begin{center}
@@ -118,7 +142,7 @@ Le chapitre \ref{chapter:securite_electrique} explique la partie électrique, ta
 
 Un des objectifs de ce TB, consite également à créer une notice de laboratoire pour un cours à choix de 3\ieme{} année, intitulé NANO. Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides, ainsi que des mesures pratiques. Des notices du fabricant sont accompagnées avec le système, mais sont très volumineuses, car elles doivent expliquer tout le système en détail. Ici, le but est de faire une expérience centrée uniquement sur les éléments nécessaires à la manipulation.
 
-\subsection{Application Python}
+\subsection{Application WPF en C\#}
 
 Cette application permettrait d'intéragir avec les deux logiciels ThorCam~\cite{thorcamSoftware} et Kinesis. ThorCam sert à afficher l'image en direct de la caméra, et Kinesis permet de contrôler les moteurs de translation ainsi que la puissance du laser. Le but est de rassembler ces deux outils dans un seul programme, et d'y ajouter du traitement d'image. Par exemple, on pourrait détecter automatiquement des particules dans l'image, puis les attraper et les déplacer avec le faisceau laser en contrôlant les moteurs via Kinesis.
 

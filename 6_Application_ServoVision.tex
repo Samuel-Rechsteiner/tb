@@ -1,5 +1,4 @@
 \section{Introduction}
-Cette application WPF permettra de répondre à deux contraintes rencontrées avec les solutions proposées par le système actuel.
 
 Le système doit actuellement être utilisé par deux applications distinctes pour être fonctionnel à 100\%. De ce fait, cela rends son utilisation moin ergonomique. De plus, de nombreuses fonctionnalités ont été implémentées par Thorlabs, aussi bien dans les logiciels Kinesis que ThorCam qui ne sont pas forcément utilisés dans les manipulations. Cela alourdit leur compréhension. Pour une manipulation de laboratoire, il est donc nécessaire d'avoir une notice suffisamment détaillée pour bien comprendre le fonctionnement du système, installer les logiciels et les configurer. Ce premier point va mener au premier objectif de cette nouvelle application.
 
@@ -25,12 +24,17 @@ L'application ServoVision reprend les fonctions utiles pour la manipulation, plu
 
 Depuis Kinesis, il est possible d'intégrer les blocs en entier que l'on retrouve dans Kinesis pour la gestion des servomoteurs ainsi que du driver du laser (Figure~\ref{bloc_kinesis}), ce qui facilite grandement l'intégration de cette partie dans la nouvelle application.
 
-Depuis ThorCam :
+Depuis ThorCam j'intègre :
 \begin{itemize}[label=\textbullet]
     \item Affichage en direct de la caméra
     \item Capture d'image
     \item Enregistrement d'une vidéo de la caméra
     \item Outils pour mesurer des objets dans l'image
+    \item Zoom dans la fenêtre de la caméra
 \end{itemize}
 
-Le but, c'est d'avoir une interface simple, sans toutes les options compliquées des logiciels d'origine.
+Le but, c'est d'avoir une interface simple, sans toutes les options en plus des logiciels d'origine.
+
+\section{Intégration des fonctionnalités}
+\subsection{Contrôle des drivers : laser et servomoteurs}
+\subsection{}
