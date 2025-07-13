@@ -18,19 +18,29 @@ Du côté de ThorCam, un SDK est fourni pour développer notre propre interface.
 
 Grâce à ces bibliothèques et outils, il est donc possible de regrouper les fonctions essentielles de Kinesis et ThorCam dans une seule application personnalisée.
 
-\subsection{Fonctionnalités reprises de Kinesis et ThorCam}
+\subsection{Fonctionnalités reprogrammées de Kinesis et ThorCam}
 
-L'application ServoVision reprend les fonctions utiles pour la manipulation, plus celles ajoutées pour l'algorithme de détection et le déplacement automatique des billes.
+% L'application ServoVision reprend les fonctions utiles pour la manipulation, plus celles ajoutées pour l'algorithme de détection et le déplacement automatique des billes.
 
-Depuis Kinesis, il est possible d'intégrer les blocs en entier que l'on retrouve dans Kinesis pour la gestion des servomoteurs ainsi que du driver du laser (Figure~\ref{bloc_kinesis}), ce qui facilite grandement l'intégration de cette partie dans la nouvelle application.
+Depuis Kinesis, il est possible d'intégrer les blocs en entier que l'on retrouve dans Kinesis pour la gestion des servomoteurs ainsi que du driver du laser (Figure~\ref{laser_driver}), ce qui facilite grandement l'intégration de cette partie dans la nouvelle application.
 
-Depuis ThorCam j'intègre :
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.65\textwidth]{assets/figures/Application_ServoVision/Laserdriver.jpeg}
+    \end{center}
+    \captionof{figure}{Bloc qui permet de contrôler le driver du laser en entier}
+    \label{laser_driver}
+\end{figure}
+
+Depuis ThorCam je programme :
 \begin{itemize}[label=\textbullet]
     \item Affichage en direct de la caméra
+    \item Pause/Play de la caméra
     \item Capture d'image
     \item Enregistrement d'une vidéo de la caméra
     \item Outils pour mesurer des objets dans l'image
     \item Zoom dans la fenêtre de la caméra
+    \item Déplacement dans la fenêtre de la caméra
 \end{itemize}
 
 Le but, c'est d'avoir une interface simple, sans toutes les options en plus des logiciels d'origine.

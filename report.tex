@@ -7,6 +7,8 @@
 \usepackage[nooldvoltagedirection,european,americaninductors]{circuitikz}
 \usepackage{float}
 \usepackage{enumitem}
+\usepackage{tocloft}
+\usepackage{pdfpages}
 
 \signature{signature_Rechsteiner.svg}
 
@@ -22,6 +24,11 @@
 \input{meta}
 
 \surroundwithmdframed{minted}
+
+\newcommand{\listequationsname}{Liste des équations}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}%
 
 %% Début du document
 \begin{document}
@@ -63,10 +70,10 @@
 \input{3_Securite_electrique.tex}
 \chapter{Sécurité mécanique} \label{chapter:securite_mecanique}
 \input{4_Securite_mecanique.tex}
-
+\chapter{Notice de laboratoire} \label{chapter:notice_labo}
+\input{5_Notice_laboratoire.tex}
 \chapter{Application ServoVision} \label{chapter:app_servovision}
 \input{6_Application_ServoVision.tex}
-% \chapter{Notice de laboratoire}
 
 \chapter{Conclusion}
 \input{conclusion.tex}
@@ -78,7 +85,9 @@
     \let\cleardoublepage\clearpage
     \listoftables
     \let\cleardoublepage\clearpage
-    % \listoflistings
+    \listofmyequations
+    \let\cleardoublepage\clearpage
+    % \listoflistings % Liste des codes sources
 }
 
 \clearpage
@@ -88,7 +97,7 @@
 \addappheadtotoc
 
 %%if
-\chapter{Première annexe} \label{chapter:annexes}
+% \chapter{Première annexe} \label{chapter:annexes}
 \input{annexes.tex}
 %%fi
 
