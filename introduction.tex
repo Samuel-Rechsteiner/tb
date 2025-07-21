@@ -1,16 +1,15 @@
-Le but de ce projet de bachelor consiste, premièrement, à apporter plus de sécurité au système de pinces optiques par laser afin de faciliter son utilisation au quotidien. En effet, un laser d'une puissance maximale de 40~mW est utilisé dans ce système et peut engendrer de graves problèmes oculaires.
+% Le but de ce travail de bachelor consiste, premièrement, de construire un système sécurité au système de pinces optiques par laser afin de faciliter son utilisation au quotidien. Le système est équipé d'un laser de classe 3B (puissance 40mW) continu et peut donc engendrer de graves problèmes oculaires. L'objectif est de concevoir une protection correspondant à un système de classe , adapté à une utilisation sans lunettes de protection laser.
 
-Deuxièmement, une proposition d'expérience avec un mode d'emploi compact est proposé pour le cours de NANO, un cours à choix de 3\ieme{} année. La documentation actuelle fournie par le fabricant est volumineuse et peu adaptée pour une utilisation en laboratoire pour des étudiants.
+% Deuxièmement, une proposition d'expérience avec un mode d'emploi compact est proposé pour le cours de NANO (Nanotechnologies et Applications Industrielles), un cours à choix de 3\ieme{} année. La documentation actuelle fournie par le fabricant est volumineuse et peu adaptée pour une utilisation en laboratoire pour des étudiants.
 
-Pour terminer, une application graphique en C\# utilisant le framework WPF sous .NET~8.0 et intégrant des fonctionnalités de traitement d'image est développée. Elle permet de pouvoir, par exemple, de détecter automatiquement des particules, les attraper avec le laser pour ensuite les déplacer à un autre endroit. Ces méthodes pourraient être utilisées, par exemple, pour trier des particules de manière automatisée ou de réaliser des assemblages en milieu liquide. Cette démarche de codage permet de mettre en pratique les outils acquis tout au long du cursus de bachelor.
+% Le troisième objectif est de développer une application graphique intégrant des fonctionnalités de traitement d'image pour automatiser l'utilisation de la pince optique, par exemple, pour trier des particules de manière automatisée ou de réaliser des assemblages en milieu liquide. Cette démarche de codage permet de mettre en pratique les outils acquis tout au long du cursus de bachelor.
 
-Ce projet vise donc à rendre l'expérience plus sûre, plus accessible pour tout utilisateur et permet une automatisation partielle du processus de manipulation optique des particules.
-\section{Contexte}
+% Ce projet vise donc à rendre l'expérience plus sûre, plus accessible pour tout utilisateur et permet une automatisation partielle du processus de manipulation optique des particules.
+\section{Système de la pince optique}
 
 Le système de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer des microobjets grâce à un faisceau laser focalisé. L'entreprise américaine qui vends ce système est Thorlabs. La citation suivante est traduite de l'anglais: \guillemotleft{}~Thorlabs conçoit et fabrique des produits dans les domaines de la fibre optique, des lasers, de l'instrumentation optique, de l'optomécanique, de la photonique et de l'isolation contre les vibrations~\guillemotright{}\cite{thorlabsWikipedia}.
 
-\newpage
-\subsection{Théorie}
+\subsection{Principe de fonctionnement d'une pince optique}
 
 La théorie décrite ci-dessous s'appuie sur le chapitre 3 du manuel du système \cite{manualPortableOpticalTweezers}.
 
@@ -20,6 +19,20 @@ Le principe des pinces optiques repose sur l'interaction entre un faisceau laser
     \item La force de diffusion (\textit{scattering force}), qui pousse la particule dans la direction de la propagation du faisceau.
 \end{itemize}
 Pour qu'une particule soit piégée de manière stable, il faut que la force du gradient soit plus grande que la force de diffusion.
+
+Des modèles simples permettent d'expliquer le fonctionnement des pinces optiques en considérant deux cas limites : le régime de Rayleigh ($R \ll \lambda$) et le régime de Mie ($R \gg \lambda$), selon la taille relative de la particule par rapport à la longueur d'onde du laser.
+Cependant, dans la plupart des systèmes réels, on opère dans un régime intermédiaire ($R \approx \lambda$), qui nécessite des approches théoriques plus complexes (comme la diffusion de Lorentz-Mie généralisée ou la théorie de la matrice T)~\cite{epflExplanationOpticalTweezers}.
+L'étude des régimes extrêmes reste toutefois utile pour mieux comprendre les principes du piégeage optique.
+
+Le régime de Rayleigh permet de comprendre ce principe physique.
+
+Dans ce régime, on peut considérer la bille comme un ensemble de petits dipôles polarisables. Le champ électrique du laser induit un moment dipolaire dans chacun d'eux. Comme le champ est pratiquement uniforme sur la bille (car elle est très petite), tous les dipôles sont polarisés de la même manière. Ceci permet de représenter la bille comme un seul dipôle global, dont la polarisation dépend directement du champ électrique local.
+
+L'énergie potentielle de ce dipôle dans le champ électrique est proportionnelle à l'intensité lumineuse. Par conséquent, une force apparaît, dirigée vers les zones de plus forte intensité : c'est la force de gradient, qui permet de ramener la particule vers le centre du faisceau.
+
+En parallèle, la force de diffusion provient de la diffusion de la lumière : le faisceau est en partie absorbé et réémis par la particule, ce qui la pousse dans le sens de propagation du faisceau. Cette force est également proportionnelle à l'intensité lumineuse, mais elle agit dans le sens opposé à celui du piégeage.
+
+Enfin, les expressions mathématiques des deux forces montrent qu'elles dépendent toutes deux des caractéristiques du faisceau laser, du milieu et de l'indice de réfraction de la particule.
 
 Les expressions mathématiques de ces forces dans le régime de Rayleigh (\( R \ll \lambda \)) sont les suivantes :
 
@@ -53,20 +66,6 @@ Les expressions mathématiques de ces forces dans le régime de Rayleigh (\( R \
     \item \( \lambda \) : longueur d'onde du laser
 \end{itemize}
 
-\newpage
-Des modèles simples permettent d'expliquer le fonctionnement des pinces optiques dans deux cas limites : le régime de Rayleigh ($R \ll \lambda$) et le régime de Mie ($R \gg \lambda$), selon la taille relative de la particule par rapport à la longueur d'onde du laser.
-Cependant, dans la plupart des systèmes réels, on opère dans un régime intermédiaire ($R \approx \lambda$), qui nécessite des approches théoriques plus complexes (comme la diffusion de Lorentz-Mie généralisée ou la théorie de la matrice T).
-L'étude des régimes extrêmes reste toutefois utile pour mieux comprendre les principes du piégeage optique~\cite{epflExplanationOpticalTweezers}.
-
-Le régime de Rayleigh va être expliqué dans notre cas pour comprendre ce principe physique.
-
-Dans ce régime, on peut voir la bille comme un ensemble de petits dipôles polarisables. Le champ électrique du laser induit un moment dipolaire dans chacun d'eux. Comme le champ est pratiquement uniforme sur la bille (car elle est très petite), tous les dipôles sont polarisés de la même manière. On peut donc représenter la bille comme un seul dipôle global, dont la polarisation dépend directement du champ électrique local.
-
-L'énergie potentielle de ce dipôle dans le champ est proportionnelle à l'intensité lumineuse. Par conséquent, une force apparaît, dirigée vers les zones de plus forte intensité : c'est la force de gradient, qui permet de ramener la particule vers le centre du faisceau.
-
-En parallèle, la force de diffusion provient de la diffusion de la lumière : le faisceau est en partie absorbé et réémis par la particule, ce qui la pousse dans le sens de propagation du faisceau. Cette force est également proportionnelle à l'intensité lumineuse, mais elle agit dans le sens opposé à celui du piégeage.
-
-Enfin, les expressions mathématiques des deux forces montrent qu'elles dépendent toutes deux des caractéristiques du faisceau laser, du milieu et de l'indice de réfraction de la particule.
 \newpage
 \subsection{Description du système}
 La Figure~\ref{chemin_laser_caméra} montre le trajet parcouru par le laser (\textcolor{red}{en rouge}), ainsi que du microscope vers la caméra (\textcolor[RGB]{0, 120, 0}{en vert}).
@@ -120,7 +119,7 @@ Les différents objectifs de ce travail de bachelor sont listés ci-dessous :
     \item Mettre en service le système : câblage, calibration du laser
     \item Conception de protection contre le laser afin d'apporter plus de sécurité lors de l'utilisation du système
     \item Élaboration d'une notice de laboratoire compacte pour utiliser simplement le système
-    \item Réalisation d'une application WPF en C\# visant à pouvoir combiner les 2 applications proposées par Thorlabs, détecter automatiquement des particules, ainsi que les déplacer de façon autonome.
+    \item Réalisation d'une application avec interface graphique visant à pouvoir combiner les 2 applications proposées par Thorlabs, détecter automatiquement des particules, ainsi que les déplacer de façon autonome.
           % \item Effectuer des tests de déplacements de microbilles dans différents milieux, de différentes viscosités, dans différents types de réservoirs ainsi que de multiples canaux.
           % \item Analyses expérimentales des forces de déplacement en fonction de la viscosité des fluides
 \end{enumerate}
@@ -177,7 +176,7 @@ Le chapitre \ref{chapter:securite_electrique} explique la partie électrique, ta
 
 Un des objectifs de ce TB, consite également à créer une notice de laboratoire pour un cours à choix de 3\ieme{} année, intitulé NANO. Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides, ainsi que des mesures pratiques. Des notices du fabricant sont accompagnées avec le système, mais sont très volumineuses, car elles doivent expliquer tout le système en détail. Ici, le but est de faire une expérience centrée uniquement sur les éléments nécessaires à la manipulation.
 
-\subsection{Application WPF en C\#}
+\subsection{Application avec interface graphique}
 
 Cette application permettrait d'intéragir avec les deux logiciels ThorCam~\cite{thorcamSoftware} et Kinesis~\cite{kinesisSoftware}. ThorCam sert à afficher l'image en direct de la caméra, et Kinesis permet de contrôler les moteurs de translation ainsi que le laser. Le but est de rassembler ces deux outils dans un seul programme, et d'y ajouter du traitement d'image. Par exemple, on pourrait détecter automatiquement des particules dans l'image, puis les attraper et les déplacer avec le faisceau laser en contrôlant les moteurs via Kinesis.
 

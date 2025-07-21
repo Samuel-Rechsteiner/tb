@@ -9,6 +9,7 @@
 \usepackage{enumitem}
 \usepackage{tocloft}
 \usepackage{pdfpages}
+\usepackage{pifont}
 
 \signature{signature_Rechsteiner.svg}
 
@@ -40,10 +41,6 @@
 %% Requis par les dispositions générales des travaux de Bachelor
 \preamble
 \authentification
-%% Remerciements
-\chapter*{Remerciements}
-\addcontentsline{toc}{chapter}{Remerciements}
-\input{remerciements.tex}
 
 %% Résumé / Résumé publiable / Version abrégée
 \begin{abstract}
@@ -70,13 +67,18 @@
 \input{3_Securite_electrique.tex}
 \chapter{Sécurité mécanique} \label{chapter:securite_mecanique}
 \input{4_Securite_mecanique.tex}
-\chapter{Notice de laboratoire} \label{chapter:notice_labo}
-\input{5_Notice_laboratoire.tex}
-\chapter{Application ServoVision} \label{chapter:app_servovision}
+\chapter{Expérience et notice de laboratoire} \label{chapter:notice_labo}
+\input{5_Experience_Notice_laboratoire.tex}
+\chapter{Développement de l'application ServoVision} \label{chapter:app_servovision}
 \input{6_Application_ServoVision.tex}
 
 \chapter{Conclusion}
 \input{conclusion.tex}
+
+%% Remerciements
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+\input{remerciements.tex}
 
 %% Sommaire et tables
 \clearemptydoublepage
@@ -94,7 +96,7 @@
 \printbibliography
 \appendix
 \appendixpage
-\addappheadtotoc
+\addappheadtotoc \label{chapter:annexes}
 
 %%if
 % \chapter{Première annexe} \label{chapter:annexes}
