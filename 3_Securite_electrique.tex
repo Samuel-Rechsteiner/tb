@@ -1,4 +1,4 @@
-Pour une sécurité optimale, il est judicieux d'ajouter, en plus des protections mécaniques, des capteurs afin de détecter si une protection est ouverte.
+Pour une sécurité optimale, il est judicieux d'ajouter des protections mécaniques, des capteurs dans le but détecter si une protection est ouverte.
 
 Afin de renforcer la sécurité, un arrêt d'urgence ainsi qu'une clé de maintenance sont ajoutés. Ces deux capteurs sont reliés et connectés à l'interlock du driver du laser.
 
@@ -48,7 +48,7 @@ Afin de garantir la sécurité lors de l'utilisation du laser, il est essentiel 
 \begin{minipage}[c]{0.6\textwidth}
     % Une première recherche s'est portée sur des interrupteurs de sécurité avec vérouillage électrique, que l'on retrouve beaucoup dans l'industrie. Ci-contre, un exemple de ce type d'interrupteur (Figure~\ref{interrupteur_telemecanique}).
 
-    Ces serrures ont l'avantage d'être vérouillées électriquement, ce qui permet d'assurer un vérouillage mécanique. Malheureusement, ce type de sécurité est trop volumineux pour notre système.
+    Ces serrures ont l'avantage d'être verrouillées électriquement, ce qui permet d'assurer un verrouillage mécanique. Malheureusement, ce type de sécurité est trop volumineux pour notre système.
 \end{minipage}\hfill
 \begin{minipage}[c]{0.35\textwidth}
     \begin{center}
@@ -85,7 +85,7 @@ Afin de garantir la sécurité lors de l'utilisation du laser, il est essentiel 
 \end{minipage}
 
 \begin{minipage}[c]{0.6\textwidth}
-    Le fin de course est souvent utilisé en électronique, car il ne prend pas beaucoup de place et il est facile à implémenter. Bien que cette solution soit discrète, cela reste un système de sécurité simple, et peut être facilement contourné.
+    Le fin de course est souvent utilisé en électronique, car il ne prend pas beaucoup de place et il est facile à implémenter. Bien que cette solution soit discrète, cela reste un système de sécurité simple, et peut-être facilement contourné.
 
     % La Figure~\ref{fin_de_course} montre un fin de course.
 \end{minipage}\hfill
@@ -113,12 +113,12 @@ La solution finale pour cette protection s'est tournée sur le fin de course. Se
 \begin{itemize}[label=\textbullet]
     \item Il n'y a pas beaucoup de place vers le microscope pour faire une protection, par conséquent, sa taille permet d'être installée presque où l'on souhaite.
     \item Il est peu coûteux et facilement remplaçable.
-    \item Malgré sa sécurité simple, des solutions existent pour cacher le fin de course afin qu'il ne soit pas accessible facilement.
+    \item Malgré sa sécurité simple, des solutions existent pour cacher le fin de course afin qu'il ne soit pas accessible simplement.
 \end{itemize}
 
 \section{Boîtier de sécurité : arrêt d'urgence et clé de maintenance}
 \label{subsec:arret_urgence_maintenance}
-L'ajout d'un arrêt d'urgence est l'une des principales sécurité électrique que l'on retrouve sur tout type de système électrique. Comme indiqué sur le schéma électrique de la Figure~\ref{schema_interlock_v1}, l'arrêt d'urgence est en série de tout le circuit interlock, ce qui permet de couper l'alimentation du laser à tout moment en pressant dessus.
+L'ajout d'un arrêt d'urgence est l'une des principales sécurités électrique que l'on retrouve sur tout type de système électrique. Comme indiqué sur le schéma électrique de la Figure~\ref{schema_interlock_v1}, l'arrêt d'urgence est en série de tout le circuit interlock, ce qui permet de couper l'alimentation du laser à tout moment en pressant dessus.
 
 La clé de maintenance est câblée en parallèle des deux capteurs. Comme son nom l'indique, enclencher cette clé, permet de faire la maintenance. En effet, dans cette position le contact est fermé, ce qui permet aux deux capteurs de ne plus avoir d'influence sur l'ouverture du circuit interlock. Il peut arriver de devoir effectuer des réglages sur les lentilles réglables ou sur le laser. Dans ce cas, le laser doit rester allumé même avec les protections ouvertes (Figure \ref{boitier_arret_urgence_maintenance}).
 
@@ -157,7 +157,7 @@ Une fois les capteurs choisis, le schéma électrique est remis à jour. Le chan
     Comme montré sur la Figure~\ref{cablage_sous_plaque_de_montage}, ces fils passent sous la plaque de montage en aluminium et rejoignent le boîtier contenant l'arrêt d'urgence et la clé de maintenance. Ceux-ci sont indiqués par la flèche \textcolor[RGB]{115, 210, 210}{bleue}.
 
     \vspace{1em}
-    La flèche \textcolor{red}{rouge}, montre les deux fils reliant le contact normalement ouvert dans le fin de course. Eux aussi rejoignent le boîtier par dessous.
+    La flèche \textcolor{red}{rouge}, montre les deux fils reliant le contact normalement ouvert dans le fin de course. Eux aussi rejoignent le boîtier par-dessous.
 \end{minipage}\hfill
 \begin{minipage}[c]{0.48\textwidth}
     \begin{center}
@@ -168,7 +168,7 @@ Une fois les capteurs choisis, le schéma électrique est remis à jour. Le chan
 \end{minipage}
 
 \begin{minipage}[c]{0.48\textwidth}
-    Finalement, en suivant le schéma électrique (Figure~\ref{schema_interlock_v2}), tous les composants de sécurité se retrouvent dans le boîtier afin d'être connecté ensemble, comme illustré sur la Figure~\ref{cablage_dans_boitier}.
+    Finalement, en suivant le schéma électrique (Figure~\ref{schema_interlock_v2}), tous les composants de sécurité se retrouvent dans le boîtier afin d'être connecté, comme illustré sur la Figure~\ref{cablage_dans_boitier}.
 \end{minipage}\hfill
 \begin{minipage}[c]{0.48\textwidth}
     \begin{center}

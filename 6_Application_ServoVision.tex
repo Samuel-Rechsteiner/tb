@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Le système de Thorlabs doit être utilisé par deux applications distinctes, Kinesis et ThorCam, pour être fonctionnel à 100\%. De ce fait, cela rends son utilisation moins ergonomique. De plus, de nombreuses fonctionnalités ont été implémentées par Thorlabs, aussi bien dans les logiciels Kinesis que ThorCam qui ne sont pas forcément utilisés dans les manipulations. Cela alourdit leur compréhension. Pour une manipulation de laboratoire, il est actuellement nécessaire d'avoir une notice très détaillée pour bien comprendre le fonctionnement du système, installer les logiciels et les configurer. Ce premier point va mener au premier objectif de cette nouvelle application.
+Le système de Thorlabs doit être utilisé par deux applications distinctes, Kinesis et ThorCam, pour être fonctionnel à 100~\%. De ce fait, cela rend son utilisation moins ergonomique. De plus, de nombreuses fonctionnalités ont été implémentées par Thorlabs, aussi bien dans les logiciels Kinesis que ThorCam qui ne sont pas forcément utilisés dans les manipulations. Cela alourdit leur compréhension. Pour une manipulation de laboratoire, il est actuellement nécessaire d'avoir une notice très détaillée pour bien comprendre le fonctionnement du système, installer les logiciels et les configurer. Ce premier point va mener au premier objectif de cette nouvelle application.
 
 Dans l'application Kinesis, aucun système de vision n'est intégrée et de ce fait, il est impossible de détecter automatiquement des particules. Ce second point va mener au deuxième objectif.
 
@@ -41,12 +41,12 @@ Dans l'application Kinesis, aucun système de vision n'est intégrée et de ce f
 \end{minipage}
 \newpage
 \section{Choix des solutions}
-Thorlabs met à disposition plusieurs outils pour développer sa propre application. Le logiciel Kinesis propose des contrôles .NET utilisables avec des langages comme C\#, Visual Basic, LabVIEW, ou tout autre langage compatible .NET. Des bibliothèques DLL bas niveau sont aussi disponibles. Les langages C, C++ et Python sont également compatible avec le matériel Thorlabs.
+Thorlabs met à disposition plusieurs outils pour développer sa propre application. Le logiciel Kinesis propose des contrôles .NET utilisables avec des langages comme C\#, Visual Basic, LabVIEW, ou tout autre langage compatible .NET. Des bibliothèques DLL bas niveau sont aussi disponibles. Les langages C, C++ et Python sont également compatibles avec le matériel Thorlabs.
 
-Du côté de ThorCam, un SDK (Software Development Kit) est fourni pour développer notre propre interface. Un SDK est un kit fourni par une entreprise qui contient tout le nécessaire (bibliothèques, exemples, docs) pour créer sa propre application. Il est également possible d'utiliser les langages de programmation: C\#, C++, MATLAB et Python.
+Du côté de ThorCam, un SDK (Software Development Kit) est fourni pour développer notre propre interface. Un SDK est un kit fourni par une entreprise qui contient tout le nécessaire (bibliothèques, exemples, docs) pour créer sa propre application. Il est par ailleurs possible d'utiliser les langages de programmation: C\#, C++, MATLAB et Python.
 
-Grâce à ces bibliothèques et outils, il est donc possible de regrouper les fonctions essentielles de Kinesis et ThorCam dans une seule application personnalisée.
-\subsection{Choix du language de programmation}
+Grâce à ces bibliothèques et ces outils, il est donc possible de regrouper les fonctions essentielles de Kinesis et ThorCam dans une seule application personnalisée.
+\subsection{Choix du langage de programmation}
 \begin{table}[H]
     \centering
     \begin{tabular}{|l|c|c|c|c|c|}
@@ -72,7 +72,7 @@ Grâce à ces bibliothèques et outils, il est donc possible de regrouper les fo
 \end{table}
 Le tableau~\ref{tab:langages} est composé de critères importants pour l'application. Il en ressort que le C\# est le plus adapté à ce projet. Ce langage permet de créer une interface graphique complète grâce au framework WPF (Windows Presentation Foundation), qui offre une grande flexibilité dans la création d'interfaces modernes. L'organisation claire du code ainsi que sa modularité font de C\# un choix idéal pour une application évolutive et maintenable.
 
-Python est LabVIEW ont obtenu la note de 2 pour la compatibilité avec le driver laser, car Thorlabs n'ont pas d'exemples sur leur github pour cet appareil, mais il faudrait utiliser d'autres librairies supplémentaires~\cite{controlLaserDriverPython}~\cite{controlLaserDriverLabVIEW}.
+Python est LabVIEW ont obtenu la note de 2 pour la compatibilité avec le driver laser, car Thorlabs n'ont pas d'exemples sur leur GitHub pour cet appareil, mais il faudrait utiliser d'autres librairies supplémentaires~\cite{controlLaserDriverPython},~\cite{controlLaserDriverLabVIEW}.
 
 \newpage
 \subsection{Architecture logicielle}
@@ -158,10 +158,10 @@ Seuls les services sont expliqués ici, car ce sont les principales classes perm
 \end{figure}
 Cette partie de l'application permet de gérer les moteurs, le laser et la calibration. On peut voir que les trois drivers reprennent exactement le même visuel que dans Kinesis. La bibliothèque fournie par Thorlabs permet d'intégrer directement leurs modules dans une application personnalisée. C'est un point positif, car je n'ai pas eu à reprogrammer tous les boutons de ces drivers.
 
-Dans l'onglet \textcolor[RGB]{241,158,56}{\textbf{MOTION}} il y'a deux sous-groupes, le premier est \textbf{Speed Control \& Laser}, il permet de choisir la vitesse en mm/s souhaitée, puis il suffit d'utiliser les touches du clavier pour se déplacer. Pour un confort optimal, l'appui sur la touche espace permet d'activer/désactiver le laser.
+Dans l'onglet \textcolor[RGB]{241,158,56}{\textbf{MOTION}} il y a deux sous-groupes, le premier est \textbf{Speed Control \& Laser}, il permet de choisir la vitesse en mm/s souhaitée, puis il suffit d'utiliser les touches du clavier pour se déplacer. Pour un confort optimal, l'appui sur la touche espace permet d'activer/désactiver le laser.
 
 \newpage
-Dans le deuxième sous-groupe \textbf{Positioning}, on retrouve le premier bouton \textcolor[RGB]{241,158,56}{\textbf{Center Sample}} qui permet de centrer l'échantillon sous le microscope, ce qui correspond à un déplacement des axes X et Y à 7mm sur chacun d'eux.
+Dans le deuxième sous-groupe \textbf{Positioning}, on retrouve le premier bouton \textcolor[RGB]{241,158,56}{\textbf{Center Sample}} qui permet de centrer l'échantillon sous le microscope, ce qui correspond à un déplacement des axes X et Y à 7~mm sur chacun d'eux.
 
 Le bouton \textcolor[RGB]{102,125,138}{\textbf{Log}} affiche les logs de la calibration~(Figure~\ref{Calibration_Center_logs}).
 \begin{figure}[H]
@@ -236,7 +236,7 @@ Le premier sous-groupe \textbf{Camera Controls}, permet la gestion visuelle de l
 Le sous-groupe \textbf{Tools} contient trois boutons :
 \begin{itemize}[label=\textbullet]
     \item La première fonctionnalité qui n'est pas représentée par un bouton est le zoom. Avec la molette de la souris, il est possible de zoomer et de dézoomer dans l'image.
-    \item Le premier bouton représenté par quatres flèches permet de se déplacer dans l'image une fois zoomé à l'intérieur.
+    \item Le premier bouton représenté par quatre flèches permet de se déplacer dans l'image une fois zoomé à l'intérieur.
     \item Le deuxième bouton, avec deux flèches, est un outil de mesure. Il permet de mesurer en pixels la distance entre deux points de l'image. Lors de l'affichage, des flèches jaunes sont dessinées avec la dimension en pixels indiquée à côté (Figure~\ref{Measure_Tool}).
     \item Le dernier bouton avec une flèche incurvée permet de supprimer la dernière flèche dessinée.
 \end{itemize}
@@ -261,9 +261,9 @@ L'algorithme principal utilisé pour cette détection est l'\textit{adaptive thr
     \label{Settings_Camera_zoom}
 \end{figure}
 
-L'algorithme fonctionne seulement si un anneau de pixels éteints (noirs) est fermé. On peut voir sur la figure~\ref{Settings_Camera_zoom}, l'anneau noir à droite sera considéré comme une particule, et à gauche non car ce n'est pas fermé.
+L'algorithme fonctionne seulement si un anneau de pixels éteints (noirs) est fermé. On peut voir sur la figure~\ref{Settings_Camera_zoom}, l'anneau noir à droite sera considéré comme une particule, et à gauche non, car ce n'est pas fermé.
 
-Au moment de dire si oui ou non une zone de l'image est considérée comme une particule, la plus grande zone de pixels allumés (blancs) est retirée, car elle correspond au fond blanc de l'image. Découlant de cette opération, si un anneau de pixels éteint n'est pas complétement fermé, il sera intégré à cette grande forme et ne sera pas identifié comme une vraie particule.
+Au moment de dire si oui ou non une zone de l'image est considérée comme une particule, la plus grande zone de pixels allumés (blancs) est retirée, puisqu'elle correspond au fond blanc de l'image. Découlant de cette opération, si un anneau de pixels éteint n'est pas complétement fermé, il sera intégré à cette grande forme et ne sera pas identifié comme une vraie particule.
 
 Ensuite, il suffit d'énumérer les zones blanches restantes (donc l'intérieur des anneaux noirs fermés) qui sont des particules.
 
@@ -280,7 +280,7 @@ Toujours dans le sous-groupe \textbf{Detection}, le bouton au milieu avec une \t
     \label{Live_Targeting_Bead}
 \end{figure}
 
-Dans le sous-groupe \textbf{Detected Particles} de la Figure~\ref{Live_Targeting_Bead}, il est possible de visualiser la liste des particules détectées, avec leur coordonnées et un numéro attribué à chacune d'elles. Les coordonnées en X se lisent de gauche à droite, et pour celles en Y de haut en bas.
+Dans le sous-groupe \textbf{Detected Particles} de la Figure~\ref{Live_Targeting_Bead}, il est possible de visualiser la liste des particules détectées, avec leurs coordonnées et un numéro attribué à chacune d'elles. Les coordonnées en X se lisent de gauche à droite, et pour celles en Y de haut en bas.
 
 \newpage
 \subsubsection{Déplacement automatique de particules vers le laser}
@@ -288,18 +288,18 @@ Une dernière fonctionnalité au niveau de déplacement automatique de particule
 
 Comme première approche, on pourrait penser qu'il suffit de prendre les coordonnées de la particule sélectionnée, puis de déplacer les moteurs pour aligner le laser sur celle-ci. En réalité, c'est plus complexe que cela.
 
-Un paramètre qui paraît anodin, mais qui a toute son importance à cette échelle, est le \textbf{jeu mécanique des moteurs}. En effet, lorsqu'on effectue un déplacement dans une direction, puis qu'on veuille repartir dans la direction opposée, il faut d'abord compenser ce jeu.
+Un paramètre qui paraît anodin, mais qui a toute son importance à cette échelle, est le \textbf{jeu mécanique des moteurs}. En effet, lorsqu'on effectue un déplacement dans une direction, puisqu'on veuille repartir dans la direction opposée, il faut d'abord compenser ce jeu.
 
 Pour les moteurs utilisés dans ce système (Z812B), la datasheet indique qu'il y a un jeu mécanique (\textit{backlash}) inférieur à 8~\textmu m (section 5.1 de la datasheet~\cite{motorZ812B}).
 
 La procédure du déplacement de la particule sous le laser est décrite ci-dessous:
 \begin{enumerate}
     \item Mouvements en X et Y de +8~\textmu m pour être sûr de corriger le jeu mécanique.
-    \item Une nouvelle image est acquise et on cherche la particule la plus proche de la particule trouvée avant les déplacements, ce qui devrait donner la même particule, en supposant qu'elle n'a pas bougée. À présent, les vraies coordonnées de la particule sont acquises.
+    \item Une nouvelle image est acquise et on cherche la particule la plus proche de la particule trouvée avant les déplacements, ce qui devrait donner la même particule, en supposant qu'elle n'ait pas bougée. À présent, les vraies coordonnées de la particule sont acquises.
     \item Calcul de la distance à parcourir entre la particule et le laser.
     \item Déplacement vers le laser en X et en Y.
     \item
-          La dernière étape consiste à rattraper une dernière fois le jeu mécanique. La Figure~\ref{schema_explicatif_jeu} illustre ce problème. Pour amener le laser sur la particule, appliquer simplement un déplacement en X et en Y ne suffit pas :  quatres cas différents risquent d'arriver.
+          La dernière étape consiste à rattraper une dernière fois le jeu mécanique. La Figure~\ref{schema_explicatif_jeu} illustre ce problème. Pour amener le laser sur la particule, appliquer simplement un déplacement en X et en Y ne suffit pas :  quatre cas différents risquent d'arriver.
 
           Si la particule se trouve dans le quadrant n\textsuperscript{o}1, le positionnement final sera juste. En revanche, si elle se situe dans un autre quadrant, il reste une dernière opération à effectuer.
 
@@ -316,7 +316,7 @@ La procédure du déplacement de la particule sous le laser est décrite ci-dess
 \subsubsection{Fiabilité et répétabilité de la détection et déplacement d'une particule}
 \textbf{Fiabilité}
 
-La fiabilité de la détection dépend pas mal des bons réglages à faire dans les paramètres (taille des particules, seuils, etc...). Si on prend le temps de bien les ajuster pour les conditions d'image qu'on a (bon contraste, particules bien visibles), la détection fonctionne bien. Une fois les bons paramètres trouvés, la particule est détectée presque à chaque fois, ce qui montre que la fiabilité est plutôt bonne.
+La fiabilité de la détection dépend pas mal des bons réglages à faire dans les paramètres (taille des particules, seuils, etc.). Si on prend le temps de bien les ajuster pour les conditions d'image qu'on a (bon contraste, particules bien visibles), la détection fonctionne bien. Une fois les bons paramètres trouvés, la particule est détectée presque à chaque fois, ce qui montre que la fiabilité est plutôt bonne.
 
 \textbf{Répétabilité}
 
