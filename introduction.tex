@@ -5,11 +5,11 @@
 % Le troisième objectif est de développer une application graphique intégrant des fonctionnalités de traitement d'image pour automatiser l'utilisation de la pince optique, par exemple, pour trier des particules de manière automatisée ou de réaliser des assemblages en milieu liquide. Cette démarche de codage permet de mettre en pratique les outils acquis tout au long du cursus de bachelor.
 
 % Ce projet vise donc à rendre l'expérience plus sûre, plus accessible pour tout utilisateur et permet une automatisation partielle du processus de manipulation optique des particules.
-\section{Système de la pince optique}
+\section{Système de pinces optiques}
 
 Le système de pinces optiques portables, Portable Optical Tweezers, est un dispositif qui permet de déplacer des microobjets grâce à un faisceau laser focalisé. L'entreprise américaine qui vend ce système est Thorlabs. La citation suivante est traduite de l'anglais: \guillemotleft{}~Thorlabs conçoit et fabrique des produits dans les domaines de la fibre optique, des lasers, de l'instrumentation optique, de l'optomécanique, de la photonique et de l'isolation contre les vibrations~\guillemotright{}\cite{thorlabsWikipedia}.
 
-\subsection{Principe de fonctionnement d'une pince optique}
+\subsection{Principe de fonctionnement des pinces optiques}
 
 La théorie décrite ci-dessous s'appuie sur le chapitre 3 du manuel du système \cite{manualPortableOpticalTweezers}.
 
@@ -21,7 +21,7 @@ Le principe des pinces optiques repose sur l'interaction entre un faisceau laser
 Pour qu'une particule soit piégée de manière stable, il faut que la force du gradient soit plus grande que la force de diffusion.
 
 Des modèles simples permettent d'expliquer le fonctionnement des pinces optiques en considérant deux cas limites : le régime de Rayleigh ($R \ll \lambda$) et le régime de Mie ($R \gg \lambda$), selon la taille relative de la particule par rapport à la longueur d'onde du laser.
-Cependant, dans la plupart des systèmes réels, on opère dans un régime intermédiaire ($R \approx \lambda$), qui nécessite des approches théoriques plus complexes (comme la diffusion de Lorentz-Mie généralisée ou la théorie de la matrice T)~\cite{epflExplanationOpticalTweezers}.
+Cependant, dans la plupart des systèmes réels, on opère dans un régime intermédiaire ($R \approx \lambda$), qui nécessite des approches théoriques plus complexes comme la diffusion de Lorentz-Mie généralisée ou la théorie de la matrice T~\cite{epflExplanationOpticalTweezers}.
 L'étude des régimes extrêmes reste toutefois utile pour mieux comprendre les principes du piégeage optique.
 
 Le régime de Rayleigh permet de comprendre ce principe physique.
@@ -125,7 +125,7 @@ Une représentation 3D du système, accompagnée de légendes pour chaque compos
 
 \section{Objectifs}
 
-Les différents objectifs de ce travail de bachelor sont listés ci-dessous :
+Les différents objectifs de ce travail de Bachelor sont listés ci-dessous :
 \begin{enumerate}
     \item Mettre en service le système : câblage, calibration du laser
     \item Conception de protection contre le laser afin d'apporter plus de sécurité lors de l'utilisation du système
@@ -169,7 +169,7 @@ Dans le cadre de ce TB, deux niveaux de protection ont été élaborés afin de 
 \end{minipage}
 
 \begin{minipage}{\textwidth}
-    Une deuxième protection va être faite vers le microscope, car également à cet endroit, le laser devient visible à l'\oe{}il nu et il y a un grand risque de se blesser. L'encadré en \textcolor{blue}{bleu} représente l'endroit où la protection va devoir être imaginée. Voir la Figure~\ref{protection_laser_fin}.
+    Une deuxième protection va être faite vers le microscope, car à cet endroit, le laser devient également visible à l'\oe{}il nu et il y a un grand risque de se blesser. L'encadré en \textcolor{blue}{bleu} représente l'endroit où la protection va devoir être imaginée. Voir la Figure~\ref{protection_laser_fin}.
     \vspace{1em}
     \begin{figure}[H]
         \begin{center}
@@ -185,8 +185,8 @@ Le chapitre \ref{chapter:securite_electrique} explique la partie électrique, ta
 
 \subsection{Expérience et notice de laboratoire}
 
-Un des objectifs de ce TB, consiste par ailleurs à créer une notice de laboratoire pour un cours à choix de 3\ieme{} année, intitulé NANO. Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides, ainsi que des mesures pratiques. Des notices du fabricant sont accompagnées avec le système, mais sont très volumineuses, car elles doivent expliquer tout le système en détail. Ici, le but est de faire une expérience centrée uniquement sur les éléments nécessaires à la manipulation.
+Un des objectifs de ce TB, consiste par ailleurs à créer une notice de laboratoire pour un cours à choix de 3\ieme{} année, intitulé NANO (Nanotechnologies et Applications Industrielles). Cette notice devra être simple à comprendre, compacte et comprendra des manipulations avec différents liquides ainsi que des mesures pratiques. Des notices du fabricant sont accompagnées avec le système, mais sont très volumineuses, car elles doivent expliquer tout le système en détail. Ici, le but est de faire une expérience centrée uniquement sur les éléments nécessaires à la manipulation.
 
 \subsection{Application avec interface graphique}
 
-Cette application permettrait d'interagir avec les deux logiciels ThorCam~\cite{thorcamSoftware} et Kinesis~\cite{kinesisSoftware}. ThorCam sert à afficher l'image en direct de la caméra, et Kinesis permet de contrôler les moteurs de translation ainsi que le laser. Le but est de rassembler ces deux outils dans un seul programme, et d'y ajouter du traitement d'image. Par exemple, on pourrait détecter automatiquement des particules dans l'image, puis les attraper et les déplacer avec le faisceau laser en contrôlant les moteurs via Kinesis.
+Cette application permettrait d'interagir avec les deux logiciels ThorCam~\cite{thorcamSoftware} et Kinesis~\cite{kinesisSoftware}. ThorCam sert à afficher l'image en direct de la caméra, et Kinesis permet de contrôler les moteurs de translation ainsi que le laser. Le but est de rassembler ces deux outils dans un seul programme et d'y ajouter du traitement d'image. Par exemple, on pourrait détecter automatiquement des particules dans l'image, puis les attraper et les déplacer avec le faisceau laser en contrôlant les moteurs via Kinesis.

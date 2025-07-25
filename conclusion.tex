@@ -6,13 +6,17 @@
 % Il est de coutume de signer la conclusion...
 %%fi
 \section*{Bilan technique}
-Depuis la réception du système de pinces optiques au début du travail de bachelor, de nombreuses améliorations ont pu être réalisées.
+Depuis la réception du système de pinces optiques au début du travail de Bachelor, de nombreuses améliorations ont pu être réalisées.
 
 \textbf{Sécurité} :
-Le système a été optimisé pour éviter tout contact direct avec le laser. Deux protections mécaniques associées chacune à un capteur électrique ont été confectionnées afin de garantir une utilisation sécurisée du système sans protection contre le laser. La première protection, située proche du laser, est un assemblage de trois tôles en aluminium accompagné d'une charnière industrielle. Celle-ci intègre un capteur qui, lorsque la protection est ouverte, coupe l'alimentation du laser. La seconde protection, située autour du microscope et imprimée en 3D, est complétée par un capteur de fin de course qui, lui aussi, coupe le laser à la moindre ouverture. Comme dans toute installation mécano-électrique, un arrêt d'urgence a été câblé, désactivant le faisceau laser. Le système correspond ainsi à un système de classe 1, lorsqu'il est fermé. Seulement l'ajustement du chemin optique nécessite l'utilisation des lunettes de protection (en mode maintenance), c.f. chapitre~\ref{section:maintenance}.
+Le système a été optimisé pour éviter tout contact visuel direct avec le laser. Deux protections mécaniques, associées chacune à un capteur électrique, ont été confectionnées afin de garantir une utilisation sécurisée du système, sans lunettes de protection. La première protection, située proche du laser, est un assemblage de trois tôles en aluminium, accompagné d'une charnière industrielle. Celle-ci intègre un capteur qui, lorsque la protection est ouverte, coupe l'alimentation du laser.
+
+La seconde protection, située autour du microscope et imprimée en 3D, est complétée par un capteur de fin de course qui, lui aussi, coupe le laser à la moindre ouverture.
+
+Comme dans toute installation mécano-électrique, un arrêt d'urgence a été câblé, désactivant le faisceau laser. Le système correspond ainsi à un système de classe 1, lorsqu'il est fermé. Seul l'ajustement du chemin optique nécessite l'utilisation des lunettes de protection (en mode maintenance), c.f. chapitre~\ref{section:maintenance}.
 
 \textbf{Ergonomie} :
-Une amélioration a été faite au niveau du câblage des alimentations et des câbles de communication. Le système nécessite quatre connexions USB-A pour communiquer avec l'ordinateur. Un hub USB-A à 4 ports a donc été intégré pour que finalement, un seul câble USB-A soit à brancher sur le poste. Un bouton à clé a aussi été câblé pour pouvoir manipuler le laser plus facilement lors de la maintenance, même lorsque les protections sont ouvertes.
+Une amélioration a été faite au niveau du câblage des alimentations et des câbles de communication. Le système nécessite quatre connexions USB-A pour communiquer avec l'ordinateur. Un hub USB-A à quatre ports a alors été intégré pour qu'un seul câble USB-A ne soit à brancher sur le poste. Un bouton à clé a également été câblé, pour but de pouvoir manipuler le laser plus facilement lors de la maintenance, même lorsque les protections sont ouvertes.
 
 \textbf{Application ServoVision} :
 Cette application en C\#, utilisant WPF, a été programmée en regroupant les fonctionnalités de Kinesis ainsi que de ThorCam pour faciliter l'utilisation du système. Un algorithme détectant automatiquement des particules a été implémenté. Il est également possible de déplacer automatiquement une particule sous le laser.
@@ -24,7 +28,9 @@ Le manuel d'utilisation fourni par Thorlabs étant volumineux, une notice de lab
 Plusieurs expériences ont été menées avec différentes matières. Le calcul de la force de maintien maximale d'une particule de graisse avec un mélange d'eau distillée et de crème a été réalisé.
 
 \section*{Conclusion personnelle}
-Ce travail de bachelor a fait appel à plusieurs domaines : la conception mécanique pour les protections, l'électricité et le câblage pour les différents capteurs ainsi que les boutons, et la programmation de l'interface homme-machine pour l'application ServoVision. Personnellement, j'aime quand le travail que j'entreprends est varié. De mon point de vue, les objectifs ont été atteints. Le système est fonctionnel, sécurisé pour des utilisateur\(\cdot\)trices non-expert\(\cdot\)es, et comporte une application ergonomique facile d'utilisation.
+Ce travail de Bachelor a fait appel à plusieurs domaines : la conception mécanique pour les protections, l'électricité et le câblage pour les différents capteurs ainsi que les boutons, et la programmation de l'interface homme-machine pour l'application ServoVision. Personnellement, j'aime quand le travail que j'entreprends est varié. C'est pourquoi, j'ai beaucoup apprécié travailler dans tous ces domaines. De mon point de vue, les objectifs ont été atteints : Le système est fonctionnel, sécurisé pour des utilisateur\(\cdot\)trices non-expert\(\cdot\)es, et comporte une application ergonomique facile d'utilisation.
+
+Une amélioration possible pour le futur, serait d'ajouter un moteur sur l'axe Z. De ce fait, le réglage de la hauteur de l'échantillon pourrait se faire automatiquement et être intégré dans l'application ServoVision.
 \vfil
 \hspace{8cm}\makeatletter\@author\makeatother\par
 \hspace{8cm}\begin{minipage}{5cm}

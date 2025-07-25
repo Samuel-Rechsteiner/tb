@@ -1,11 +1,11 @@
 Pour une sécurité optimale, il est judicieux d'ajouter des protections mécaniques, des capteurs dans le but détecter si une protection est ouverte.
 
-Afin de renforcer la sécurité, un arrêt d'urgence ainsi qu'une clé de maintenance sont ajoutés. Ces deux capteurs sont reliés et connectés à l'interlock du driver du laser.
+De manière à renforcer la sécurité, un arrêt d'urgence ainsi qu'une clé de maintenance sont ajoutés. Ces deux capteurs sont reliés et connectés à l'interlock du driver du laser.
 
 \section{Interlock: Principe de fonctionnement}
 
 \begin{minipage}[c]{0.6\textwidth}
-    Le driver du laser intègre un système d'interlock permettant de désactiver, si le circuit électrique interlock est ouvert, l'alimentation du laser. Par défaut, un pont est soudé entre les pins 1 et 5 (Figure~\ref{No_interlock}).
+    Le driver du laser intègre un système d'interlock permettant de désactiver l'alimentation du laser, si le circuit électrique interlock est ouvert. Par défaut, un pont est soudé entre les pins 1 et 5 (Figure~\ref{No_interlock}).
 \end{minipage}\hfill
 \begin{minipage}[c]{0.35\textwidth}
     \begin{figure}[H]
@@ -31,7 +31,7 @@ Afin de renforcer la sécurité, un arrêt d'urgence ainsi qu'une clé de mainte
 
 \newpage
 \section{Première version du schéma électrique de l'interlock}
-La Figure~\ref{schema_interlock_v1} montre la première version du schéma électrique complet de l'interlock. Comme le choix des capteurs n'est pas encore fait à ce jour, des fins de course ont été représentés de façon provisoire, afin d'avoir une première représentation fonctionnelle du système. L'arrêt d'urgence ainsi que la clé de maintenance seront expliqués à la section~\ref{subsec:arret_urgence_maintenance}.
+La Figure~\ref{schema_interlock_v1} montre la première version du schéma électrique complet de l'interlock. Comme le choix des capteurs n'était pas encore fait à ce moment là, des fins de course avaient été représentés de façon provisoire, afin d'avoir une première représentation fonctionnelle du système. L'arrêt d'urgence ainsi que la clé de maintenance seront expliqués à la section~\ref{subsec:arret_urgence_maintenance}.
 
 \begin{figure}[H]
     \begin{center}
@@ -120,7 +120,7 @@ La solution finale pour cette protection s'est tournée sur le fin de course. Se
 \label{subsec:arret_urgence_maintenance}
 L'ajout d'un arrêt d'urgence est l'une des principales sécurités électrique que l'on retrouve sur tout type de système électrique. Comme indiqué sur le schéma électrique de la Figure~\ref{schema_interlock_v1}, l'arrêt d'urgence est en série de tout le circuit interlock, ce qui permet de couper l'alimentation du laser à tout moment en pressant dessus.
 
-La clé de maintenance est câblée en parallèle des deux capteurs. Comme son nom l'indique, enclencher cette clé, permet de faire la maintenance. En effet, dans cette position le contact est fermé, ce qui permet aux deux capteurs de ne plus avoir d'influence sur l'ouverture du circuit interlock. Il peut arriver de devoir effectuer des réglages sur les lentilles réglables ou sur le laser. Dans ce cas, le laser doit rester allumé même avec les protections ouvertes (Figure \ref{boitier_arret_urgence_maintenance}).
+La clé de maintenance est câblée en parallèle des deux capteurs. Comme son nom l'indique, enclencher cette clé permet de faire la maintenance. En effet, dans cette position le contact est fermé, ce qui permet aux deux capteurs de ne plus avoir d'influence sur l'ouverture du circuit interlock. Il peut arriver de devoir effectuer des réglages sur les lentilles réglables ou sur le laser. Dans ce cas, le laser doit rester allumé même avec les protections ouvertes (Figure \ref{boitier_arret_urgence_maintenance}).
 
 \begin{figure}[H]
     \begin{center}
